@@ -2,15 +2,23 @@ Grupo 7
 ----------------------------------
 Trabajo Integrador - Sprint 1
 ----------------------------------
+Integrantes: 
+
 Alejandro Areco
 Patricio Eduardo Fernandez
 Ramiro Martinez  
 ----------------------------------
 
+Referencias E-commerce
 
+www.zappos.com : sitio de e-commerce de Estados Unidos en el cual se comercializa indumentaria. Fue propuesto por Alejandro ya que trabaja para dicho sitio y conoce el diseño y funcionamiento del mismo, el cual esta orientado a una buena experiencia de usuario.
+
+www.amazon.com: sitio propuesto por Alejandro por la facilidad de busqueda, compra e informacion de productos. Tambien se destaca la facilidad para realizar la compra, y lo visual de sus productos y precios. 
+
+www.wayfair.com: sitio propuesto por Alejandro. La dinamica del sitio y como muestra al usuario la gama de productos y beneficios es muy interesante. 
 
 ------------------------
-descripcion del proyect
+Descripcion del proyect
 ------------------------
 
 El sitio ofrece venta y alquiler de fogones a Bioetanol. Objetos de decoracion y calefacción mediante un sistema de 
