@@ -1,5 +1,11 @@
-Grupo 7 //////////////////////////////////////////////////////////////////////////////////////////////// Trabajo Integrador - Sprint 1 /////////////////////////////////  Alejandro Areco  /////////////////////////////////  Patricio Eduardo Fernandez  //////////////////////  Ramiro Martinez  ///////////////////////////////////
-
+Grupo 7 
+----------------------------------
+Trabajo Integrador - Sprint 1
+----------------------------------
+Alejandro Areco
+Patricio Eduardo Fernandez
+Ramiro Martinez  
+----------------------------------
 
 
 
