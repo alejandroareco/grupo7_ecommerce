@@ -15,7 +15,11 @@ www.zappos.com : sitio de e-commerce de Estados Unidos en el cual se comercializ
 
 www.amazon.com: sitio propuesto por Alejandro por la facilidad de busqueda, compra e informacion de productos. Tambien se destaca la facilidad para realizar la compra, y lo visual de sus productos y precios. 
 
-www.wayfair.com: sitio propuesto por Alejandro. La dinamica del sitio y como muestra al usuario la gama de productos y beneficios es muy interesante. 
+www.wayfair.com: sitio propuesto por Alejandro. La dinamica del sitio y como muestra al usuario la gama de productos y beneficios es muy interesante.
+
+www.simpleobjetosunicos.com : sitio propuesto por Patricio por la relación de productos ofrecidos y el público al que apunta. Ademas cumple con todas las funcionalidades de que necesitamos para desarrollar nuestro e-commerce.
+
+www.biofogonesdesign.com.ar : propuesto por Patricio, presenta similares caracteristicas al sitio anterior sumado a una interesante estetica con animaciones para desarrollar con javascript.
 
 ------------------------
 Descripcion del proyect
