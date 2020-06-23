@@ -21,6 +21,10 @@ www.simpleobjetosunicos.com : sitio propuesto por Patricio por la relación de p
 
 www.biofogonesdesign.com.ar : propuesto por Patricio, presenta similares caracteristicas al sitio anterior sumado a una interesante estetica con animaciones para desarrollar con javascript.
 
+www.sony.com.ar: propuesto por Ramiro, destaca por su simpleza y elegancia, facil navegabilidad y buena estructuracion.
+
+www.doucals.com/it: propuestopor Ramiro. por su navegavilidad, el cabio de eje de los cursores, para movilizarte y los paneles desplegables lo hacen una muy buena opcion.
+
 ------------------------
 Descripcion del proyect
 ------------------------
