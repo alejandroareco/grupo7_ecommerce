@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    
+}
+
+/* ==================
+- HEADER
+================== */
+
+header {
+    
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+    padding-top: 10px;
+}
+header div{}
+header div a img{
+    width: 80px;
+    padding-right: 10px;
+}
+
+header div form{
+    display: flex;
+
+    align-items: center;
+    max-width: 100%;
+}
+
+header div nav{
+    display: flex;
+    width: 100%;
+    padding: 0%;
+    justify-content: center;
+    border-bottom: 1px solid gray  ;
+    
+}
+
+header div nav button.burger{
+    justify-content: center;
+}
+
+header div nav ul{
+    display: none;
+    padding: 0;
+    list-style: none;
+    
+}
+header div nav ul li a{
+    color: black;
+    align-items: center    
+}
+/* ==================
+- sidebar
+================== */
+article img.producto {
+    width: 100%;
+}
+
+    .left,
+    .right {
+        top: 50%;
+        float: left;
+        transform: translateX(100);
+    }
+
+    .left {
+        background: #337ab7;
+        display: inline-block;
+        white-space: nowrap;
+        width: 50px;
+        transition: width .5s;
+    }
+
+    .right {
+        background: #fff;
+        width: 350px;
+        transition: width 1s;
+        border-style: solid;
+        border-color: #ccc;
+        border-width: 1px;
+    }
+
+    .left:hover {
+        width: 250px;
+    }
+
+    .item:hover {
+        background-color: #222;
+    }
+
+    .left .fas {
+        margin: 15px;
+        width: 20px;
+        color: #fff;
+    }
+
+    i.fas {
+        font-size: 17px;
+        vertical-align: middle !important;
+    }
+
+    .item {
+        height: 50px;
+        overflow: hidden;
+        color: #fff;
+    }
+
+/*hasta aca------------------*/
+
+
+   
+
+@media (min-width: 480px) { 
+    header {
+        background-color: white;
+    }
+    header div nav{
+        justify-content: flex-start;
+    }
+    header div nav ul{
+        display: flex;
+        align-items: flex-start;
+    }
+     
+    header div button.burger{
+        justify-content: center;
+        display: none;
+    }
+    header div nav ul li a{
+        color: black;
+        margin-right: 20px;
+    }
+    
+}
