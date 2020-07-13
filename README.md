@@ -40,3 +40,17 @@ Tablero Trello
 https://trello.com/b/t6shXWYF/grupo7-ecommerce
 
 
+------------------------------------------------------------------------
+-Sprint 2-
+------------------------------------------------------------------------
+retro:
+https://retrotool.io/0sK-WqyJp
+
+-----------------------------------------------------------------------
+
+el entry point se encuentra en:
+grupo7_ecommerce/fogonesPACA/app.js 
+
+-----------------------------------------------------------------------------
+<!--Ojo!!  en las otras carpetas se encuentran archivos intermedios incompletos.-->
+-----------------------------------------------------------------------------
