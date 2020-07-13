@@ -1,0 +1,34 @@
+* {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+#precio {
+    width: 60%;
+}
+#stock{
+    width: 30%;
+}
+
+@media (min-width: 424px) { #precio {
+    width: 45%;
+}
+#stock{
+    width: 25%;
+}
+}
+
+@media (min-width: 768px) { 
+#precio {
+        width: 55%;
+    }
+#stock{
+        width: 15%;
+    } 
+ }
+ @media (min-width: 1024px){
+    #precio {
+        width: 40%;
+    }
+#stock{
+        width: 15%;
+    }     
+ }
