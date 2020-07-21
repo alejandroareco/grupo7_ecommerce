@@ -5,8 +5,15 @@ const rutaHome = require('./routes/home');
 const rutaCarrito = require("./routes/carrito");
 const rutaCargaProducto = require("./routes/cargaProducto");
 const rutaDetalleProducto = require("./routes/detalleProducto");
+const methodOverride = require ('method-override');
 
 app.listen(3030,() => console.log("Server corriendo en puerto 3030"));
+
+app.use(express.urlencoded({extended:false}));
+app.use(express.json());
+app.use(methodOverride("_method"));
+
+
 app.use('/login',rutaLogin);
 app.use('/home',rutaHome);
 app.use("/carrito",rutaCarrito);

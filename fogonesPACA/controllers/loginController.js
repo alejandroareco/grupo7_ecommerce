@@ -1,3 +1,5 @@
+const fs = require ('fs');
+
 const indexController = {
     login:function(req, res){
         res.render('login')
@@ -9,9 +11,37 @@ const indexController = {
         res.render('registro')
     },
     registrado:function(req,res){
-        res.render('registrado')
+        let usuario = {
+            name: req.body.name,
+            lastname: req.body.lastname,
+            email: req.body.email,
+            password: req.body.password
+        }
+        //leer el archivo de usuarios que ya estaba//
+
+        let archivoUsuario = fs.readFileSync('./data/user.json', {encoding:'utf-8'});
+        let usuarios;
+        if (archivoUsuario == "") {
+            usuarios = []; //si no hay usuarios, creo un array de usuarios vacio//
+        }else{
+            usuarios = JSON.parse(archivoUsuario); //de lo contrario, descomprimo la lista para poder usarla//
+        }
+
+        usuarios.push(usuario); //a la lista, le agrego el usuario nuevo//
+
+        //con la informacion actualizada, le empaqueto para poder ser utilizada//
+
+        usuariosJSON = JSON.stringify(usuarios); 
+
+        fs.writeFileSync('./data/user.json', usuariosJSON);
+
+        //finalmente, envio al usuario a la vista de usuario registrado//
+
+        res.render('registrado');
+
     },
-}
+
+};
 
 
 module.exports = indexController;
