@@ -1,0 +1,230 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+
+:root {
+    --main-bg-color:  #dcdcdc;
+}
+
+header div .container-fluid{
+    padding: 20px;
+    
+}
+
+header div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between
+}
+
+
+
+header div div.logo1{
+    height: 120px;
+    width: 120px;
+}
+
+header div div.logo2{
+    width: 350px;
+    background-color: var(--main-bg-color);
+}
+
+header div div img{
+    width: 100%;
+}
+
+.ingreso{
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: bold;  
+    list-style: none;
+    line-height: 3.5;
+
+}
+    
+
+.barra-nav{
+    background-color: var(--main-bg-color);
+    height: 50px;
+    width: 100%;
+    padding: 10px;
+    font-weight: normal; 
+    word-spacing: 10px; 
+}
+
+.barra-nav {
+    text-align: center;
+}
+
+div .barra-nav ul{
+    list-style-type: none;
+    justify-content: left;
+    align-items: center;
+    margin: 0;
+}
+
+* ul{
+    margin-bottom: 0;
+}
+
+
+
+.barra-nav .menu li {
+    display: inline;
+    text-align: center;
+    text-transform: uppercase;
+    color: darkgoldenrod;
+    color: inherit;
+
+}
+
+.barra-nav .redes li {
+    display: inline;
+    text-align: right;
+    text-transform: uppercase;
+    color: cornflowerblue;
+    color: inherit;
+}
+
+ul li i.fas {
+    margin-right: 20px;
+    border-right:black 51px;
+    
+}
+
+i {
+    font-size: large;
+} 
+
+button{
+    background-color: var(--main-bg-color);
+    padding: 0%;
+    margin: 0%;
+    border: 0px;
+    display: none;
+}
+
+
+/* Media-Queries */
+@media (max-width: 700px) {
+header div div.logo1{
+    display: none;
+}
+
+div.logo2{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+header div div img{
+    height: 120px;
+    width: auto;
+    align-items: center;
+
+
+    
+}   
+
+button{
+    display: inline;
+}
+
+
+div .barra-nav ul{
+    display: none;
+}
+
+div .barra-nav{
+    margin: 20px;
+    
+}
+
+.ingreso{
+    display: none;
+}
+
+header div div.logo2{
+    width: auto
+
+
+}
+
+.barra-nav .menu{
+    display: none;
+}
+
+            
+}   
+    
+
+
+
+/* .menu
+body header{
+    font-weight: bold;
+    text-transform: uppercase;    
+}
+header img{
+    float: left;
+    width: 150px;
+    height: 145px;
+    margin-left: 15px;
+    margin-right: 60px;
+    margin-top: 5px;
+}
+
+header img.1{
+ float: left;
+}
+
+header{
+  
+    background-size: 30%;
+    background-repeat: no-repeat;
+    background-position: center;
+ 
+}
+
+
+
+.ingreso{
+margin-top: 50px;
+flex: auto;
+float: right;
+margin-right: 30px;
+font-size: 10px;
+}
+.barra-nav{
+background-color: #dcdcdc;
+height: 50px;
+margin-top: 150px;
+width: 100%;
+}
+header div ul li{
+    list-style-type: none;
+    float: left;
+    padding: 12px;
+
+}
+.menu{
+float: left;
+padding-left: 10px;
+}
+
+.redesCarrito{
+justify-content: right;
+}
+.carrito{
+    float: right;
+    
+}
+
+.redes{
+    float: right;
+    padding-right: 5%;
+}
