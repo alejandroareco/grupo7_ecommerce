@@ -1,6 +1,0 @@
-Para acceder al html de login y registro, mediante express :
-
-login: http://localhost:3030/login
-
-registro: http://localhost:3030/login/registro
-
