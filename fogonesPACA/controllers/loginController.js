@@ -1,4 +1,6 @@
 const fs = require ('fs');
+const path = require('path');
+const bcrypt = require ('bcrypt');
 
 const indexController = {
     login:function(req, res){
@@ -15,11 +17,12 @@ const indexController = {
             name: req.body.name,
             lastname: req.body.lastname,
             email: req.body.email,
-            password: req.body.password
+            password: bcrypt.hashSync(req.body.password,12)
         }
         //leer el archivo de usuarios que ya estaba//
 
-        let archivoUsuario = fs.readFileSync('./data/user.json', {encoding:'utf-8'});
+        //let archivoUsuario = fs.readFileSync('./data/user.json', {encoding:'utf-8'}); 
+        let archivoUsuario = fs.readFileSync(path.join(__dirname,'../data/user.json'), {encoding:'utf-8'});
         let usuarios;
         if (archivoUsuario == "") {
             usuarios = []; //si no hay usuarios, creo un array de usuarios vacio//
@@ -33,7 +36,7 @@ const indexController = {
 
         usuariosJSON = JSON.stringify(usuarios); 
 
-        fs.writeFileSync('./data/user.json', usuariosJSON);
+        fs.writeFileSync(path.join(__dirname,'../data/user.json'), usuariosJSON);
 
         //finalmente, envio al usuario a la vista de usuario registrado//
 
