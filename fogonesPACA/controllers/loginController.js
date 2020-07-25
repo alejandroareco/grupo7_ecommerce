@@ -1,6 +1,6 @@
 const fs = require ('fs');
 const path = require('path');
-const bcrypt = require ('bcrypt');
+//const bcrypt = require ('bcrypt');
 
 const indexController = {
     login:function(req, res){
@@ -17,7 +17,7 @@ const indexController = {
             name: req.body.name,
             lastname: req.body.lastname,
             email: req.body.email,
-            password: bcrypt.hashSync(req.body.password,12)
+            //password: bcrypt.hashSync(req.body.password,12)
         }
         //leer el archivo de usuarios que ya estaba//
 
