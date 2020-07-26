@@ -11,7 +11,7 @@ const indexController = {
         let producto = {   
             id: req.body.id,
             name: req.body.name,
-            description: req.body.name,
+            description: req.body.description,
             image: req.body.image,
             stock: req.body.stock,
             price: req.body.price
