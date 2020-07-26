@@ -2,15 +2,18 @@
     margin: 0;
     box-sizing: border-box;
     padding: 0px;
-
 }
 body {
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    
 }
 
 /* ==================
 - HEADER
 ================== */
+button{
+    color: red;
+}
 section {
    
         display: flex;
@@ -24,6 +27,7 @@ article {
    border-color: hotpink;
 
 }
+
 
 section div{
     display: flex;
