@@ -3,8 +3,8 @@ const router = express.Router();
 const cargaProductoController = require('../controllers/cargaProductoController');
 
 router.get('/',cargaProductoController.cargaProducto);/*Formulario de carga de producto*/
-router.post('/', cargaProductoController.cargaProducto); /*(enviar producto agreado a archivo json)*/
-router.get('/', cargaProductoController.listadoProductos); /*Listado de todos los productos cargados*/
+router.post('/', cargaProductoController.cargarProducto); /*(enviar producto agreado a archivo json)*/
+router.get('/listadoProductos', cargaProductoController.listadoProductos); /*Listado de todos los productos cargados*/
 
 
 /*

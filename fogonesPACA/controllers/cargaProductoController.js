@@ -7,7 +7,7 @@ const indexController = {
         res.render('cargaProducto')
     },
 
-    cargaProducto:function(req, res){
+    cargarProducto:function(req, res){
         let producto = {   
             id: req.body.id,
             name: req.body.name,
@@ -31,7 +31,7 @@ const indexController = {
 
         fs.writeFileSync('./data/productos.json', productosJSON);
 
-        res.render('cargaProducto');
+        res.render('productoCargado');
       
     },
 
