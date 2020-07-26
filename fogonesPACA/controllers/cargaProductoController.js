@@ -36,7 +36,7 @@ const indexController = {
     },
 
     listadoProductos:function(req, res){
-        res.render('home')
+        res.render('listadoDeProductos')
     },
 
 /*
