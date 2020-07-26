@@ -47,18 +47,18 @@
                 </a>
             </div>
               <br>
-                <form>
+                <form method="POST" action="cargaProducto">
                     <div class="form-group">
-                        <input type="file" class="form-control-file" id="exampleFormControlFile1" method="POST" action="cargaProducto">
+                        <input type="file" class="form-control-file" id="exampleFormControlFile1" >
                     </div>
             </form>
           </div>
           <br>
           <div class="col-12 col-md-6">
-            <form>
+            <form method="POST" action="cargaProducto">
                 <div class="form-group">
                   <label for="exampleFormControlInput1">Nombre del producto:</label>
-                  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Producto"  method="POST" action="cargaProducto">
+                  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Producto" name="producto" method="POST" action="cargaProducto">
                 </div>
         
                 <div id="precio" class="input-group mb-3">
