@@ -10,13 +10,18 @@ const indexController = {
     cargarProducto:function(req, res, next){
         
         let producto = {   
+            /* asigno el id con date.now()*/
             id:  Date.now(),
             name: req.body.name,
             description: req.body.description,
+            /* aca saca los nombres que le da multer con date.now()(tiene 3 posiciones el array req.files[2])*/
             image: req.files[0].filename,
+            image1: req.files[1].filename,
+            image2: req.files[2].filename,
+
             stock: req.body.stock,
             price: req.body.price,
-        }
+        };
 
                                             /*path.join(__dirname,*/
         let archivoProducto = fs.readFileSync('./data/productos.json', {encoding:'utf-8'});
