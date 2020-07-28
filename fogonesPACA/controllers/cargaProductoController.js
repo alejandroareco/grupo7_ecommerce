@@ -7,14 +7,15 @@ const indexController = {
         res.render('cargaProducto')
     },
 
-    cargarProducto:function(req, res){
+    cargarProducto:function(req, res, next){
+        
         let producto = {   
-            id: req.body.id,
+            id:  Date.now(),
             name: req.body.name,
             description: req.body.description,
-            image: req.body.image,
+            image: req.files[0].filename,
             stock: req.body.stock,
-            price: req.body.price
+            price: req.body.price,
         }
 
                                             /*path.join(__dirname,*/

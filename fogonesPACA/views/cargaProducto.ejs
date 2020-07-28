@@ -47,15 +47,15 @@
                 </a>
             </div>
               <br>
-                <form method="POST" action="cargaProducto">
+                <form method="post" action="cargaProducto" enctype="multipart/form-data">
                     <div class="form-group">
-                        <input type="file" class="form-control-file" id="exampleFormControlFile1" >
+                        <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image" enctype="multipart/form-data">
                     </div>
-            </form>
+           
           </div>
           <br>
           <div class="col-12 col-md-6">
-            <form method="POST" action="">
+           
                 <div class="form-group">
                   <label for="exampleFormControlInput1">Nombre del producto:</label>
                   <input type="text" name="name" class="form-control" id="exampleFormControlInput1" placeholder="Producto" >
