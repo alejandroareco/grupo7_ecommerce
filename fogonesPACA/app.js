@@ -16,9 +16,9 @@ app.use(express.json());
 
 app.use('/login',rutaLogin);
 app.use('/home',rutaHome);
-app.use("/carrito",rutaCarrito);
-app.use("/cargaProducto",rutaCargaProducto);
-app.use("/detalleProducto", rutaDetalleProducto); 
+app.use('/carrito',rutaCarrito);
+app.use('/cargaProducto',rutaCargaProducto);
+app.use('/detalleProducto', rutaDetalleProducto); 
 
 app.use(express.static(__dirname+ '/public'));
 app.set('view engine', 'ejs'); 
