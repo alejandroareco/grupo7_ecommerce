@@ -50,12 +50,29 @@
                 <form method="post" action="cargaProducto" enctype="multipart/form-data">
                     <div class="form-group">
                       <!-- nuevo name="image" -->
-                        <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image" enctype="multipart/form-data">
-                        <!-- nuevo input name="image1"-->
-                        <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image1" enctype="multipart/form-data">
-                        <!-- nuevo input name="image2"-->
-                        <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image2" enctype="multipart/form-data">
-
+                      <input type="file" class="form-control-file" onclick="enable()" id="exampleFormFile1" name="image" enctype="multipart/form-data">
+                      <!-- nuevo input name="image1"-->
+                      <script>
+                          function disable() {
+                          document.getElementById("exampleFile2").disabled = true;
+                          }
+                          function enable() {
+                          document.getElementById("exampleFile2").disabled = false;
+                          }
+                          </script>
+          
+                      <input type="file" class="form-control-file" onclick="enable1()" disabled="true" id="exampleFile2" name="image1" enctype="multipart/form-data">
+                      <!-- nuevo input name="image2"-->
+          
+                      <script>
+                          function disable1() {
+                          document.getElementById("exampleFile3").disabled = true;
+                          }
+                          function enable1() {
+                          document.getElementById("exampleFile3").disabled = false;
+                          }
+                          </script>
+                      <input type="file" class="form-control-file" onclick="enable1()" disabled="true" id="exampleFile3" name="image2" enctype="multipart/form-data">
                       </div>
            <!--elimine el form (estaba cagando la carga ahora es un gran form) -->
           </div>
