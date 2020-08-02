@@ -29,6 +29,7 @@ const indexController = {
         lastname: req.body.lastname,
         email: req.body.email,
         password: bcrypt.hashSync(req.body.password,12),
+        avatar: req.files[0].filename,
         }
         //leer el archivo de usuarios que ya estaba//
 
