@@ -1,10 +1,10 @@
 const express = require('express');
 const app = express();
-const rutaLogin = require('./routes/login');
-const rutaHome = require('./routes/home');
-const rutaCarrito = require("./routes/carrito");
-const rutaCargaProducto = require("./routes/cargaProducto");
-const rutaDetalleProducto = require("./routes/detalleProducto");
+const rutaLogin = require('./src/routes/users');
+const rutaHome = require('./src/routes/home');
+const rutaCarrito = require('./src/routes/carrito');
+const rutaCargaProducto = require('./src/routes/cargaProducto');
+const rutaDetalleProducto = require('./src/routes/detalleProducto');
 const {check, validationResult, body} = require('express-validator'); //validator//
 //const methodOverride = require ('method-override');
 
@@ -24,4 +24,5 @@ app.use('/cargaProducto',rutaCargaProducto);
 app.use('/detalleProducto', rutaDetalleProducto); 
 
 app.use(express.static(__dirname+ '/public'));
+app.set('views', './src/views');
 app.set('view engine', 'ejs'); 
