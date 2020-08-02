@@ -10,7 +10,7 @@ router.get('/',cargaProductoController.cargaProducto);/*Formulario de carga de p
 /*ruta de almacenamiento de imagen*/
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, './public/fotosProductosNuevos')
+      cb(null, './public/img/fotosProductosNuevos')
     },
     filename: function (req, file, cb) {
       cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))

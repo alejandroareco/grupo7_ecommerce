@@ -24,7 +24,7 @@ const indexController = {
         };
 
                                             /*path.join(__dirname,*/
-        let archivoProducto = fs.readFileSync('./data/productos.json', {encoding:'utf-8'});
+        let archivoProducto = fs.readFileSync(path.join(__dirname, '../data/productos.json'), 'utf-8');
         let productos;
         if(archivoProducto == ""){
             productos = [];
@@ -35,20 +35,20 @@ const indexController = {
         
         productosJSON = JSON.stringify(productos);
 
-        fs.writeFileSync('./data/productos.json', productosJSON);
+        fs.writeFileSync(path.join(__dirname, '../data/productos.json'), productosJSON);
 
         res.render('productoCargado');
       
     },
 
     eliminar:function(req,res){
-        let archivoProducto = fs.readFileSync('./data/productos.json', {encoding:'utf-8'});
+        let archivoProducto = fs.readFileSync(path.join(__dirname, '../data/productos.json'), productosJSON);
         let productos = JSON.parse(archivoProducto);
 
         productos = productos.fitler(producto => producto.id != req.params.id)
 
         productosJSON = JSON.stringify(productos);
-        fs.writeFileSync('./data/productos.json', productosJSON);
+        fs.writeFileSync(path.join(__dirname,'../data/productos.json'), productosJSON);
         
         res.redirect("eliminado")
     },
