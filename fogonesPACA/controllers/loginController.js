@@ -1,6 +1,8 @@
 const fs = require ('fs');
 const path = require('path');
-//const bcrypt = require ('bcrypt');
+const bcrypt = require ('bcrypt');
+const {check, validationResult, body} = require('express-validator');//validator//
+
 
 const indexController = {
     login:function(req, res){
@@ -13,11 +15,20 @@ const indexController = {
         res.render('registro')
     },
     registrado:function(req,res){
-        let usuario = {
-            name: req.body.name,
-            lastname: req.body.lastname,
-            email: req.body.email,
-            //password: bcrypt.hashSync(req.body.password,12)
+            let errores = validationResult(req);
+            if(errores.isEmpty()) {
+            res.send('se guardo el usuario')
+            } else {
+            res.render('registro', {
+             unosErrores: errores.errors
+            })}
+         
+
+    let usuario = {
+        name: req.body.name,
+        lastname: req.body.lastname,
+        email: req.body.email,
+        password: bcrypt.hashSync(req.body.password,12),
         }
         //leer el archivo de usuarios que ya estaba//
 

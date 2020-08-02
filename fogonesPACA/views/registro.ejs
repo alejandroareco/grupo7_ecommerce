@@ -11,12 +11,21 @@
   <%-include('./header.ejs')%>
 </header>
 <body>
+ 
   <div class="container">
     <div class="row">
       <div class="col-12 col-lg-12">
         <br>
         <span class="badge badge-light"><h3>Registrate</h3></span>
         <br>
+        <!-- agregue los errores -->
+        <ul>
+          <% if (typeof unosErrores != 'undefined') { %> 
+          <% for (let i = 0; i < unosErrores.length; i++) { %> 
+            <li> <%= unosErrores[i].msg  %></li>
+          <% } %>
+          <% } %>    
+        </ul>
         <br>
         <form method="POST" action="registro"> 
           <div class="form-group">
@@ -35,6 +44,7 @@
             <label for="exampleInputPassword1">Password</label>
             <input type="password" class="form-control" id="exampleInputPassword1" name="password">
           </div>
+          
           <div class="d-flex justify-content-center">
            <button type="submit" class="btn btn-primary">Registrar</button>
         </div>

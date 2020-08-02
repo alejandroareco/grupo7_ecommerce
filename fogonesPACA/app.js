@@ -5,6 +5,7 @@ const rutaHome = require('./routes/home');
 const rutaCarrito = require("./routes/carrito");
 const rutaCargaProducto = require("./routes/cargaProducto");
 const rutaDetalleProducto = require("./routes/detalleProducto");
+const {check, validationResult, body} = require('express-validator'); //validator//
 //const methodOverride = require ('method-override');
 
 app.listen(4000,() => console.log("Server corriendo en puerto 4000"));
@@ -12,6 +13,8 @@ app.listen(4000,() => console.log("Server corriendo en puerto 4000"));
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
 //app.use(methodOverride("_method"));
+
+
 
 
 app.use('/login',rutaLogin);

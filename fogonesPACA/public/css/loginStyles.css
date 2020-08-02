@@ -1,6 +1,8 @@
 /***************************
 BODY
 ***************************/
+
+
 body{
     background-color:none;
 } 
@@ -32,3 +34,9 @@ body{
     margin-right: auto;
     border-bottom: 5px solid black;
 }
+
+li{
+    list-style:none;
+    color: red;
+
+ };
