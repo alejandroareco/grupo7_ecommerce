@@ -24,7 +24,7 @@ router.post('/', upload.any(), cargaProductoController.cargarProducto); /*(envia
 router.get('/listadoProductos', cargaProductoController.listadoProductos); /*Listado de todos los productos cargados*/
 
 router.delete('/eliminar',cargaProductoController.eliminar);
-router.get('/eliminar', cargaProductoController.eliminado)/*Borrar producto del json*/
+router.get('/eliminado', cargaProductoController.eliminado);/*Borrar producto del json*/
 
 
 /*

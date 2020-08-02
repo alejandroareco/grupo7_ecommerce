@@ -23,7 +23,7 @@ const indexController = {
             price: req.body.price,
         };
 
-                                            /*path.join(__dirname,*/
+                                           
         let archivoProducto = fs.readFileSync(path.join(__dirname, '../data/productos.json'), 'utf-8');
         let productos;
         if(archivoProducto == ""){
@@ -42,18 +42,18 @@ const indexController = {
     },
 
     eliminar:function(req,res){
-        let archivoProducto = fs.readFileSync(path.join(__dirname, '../data/productos.json'), productosJSON);
+        let archivoProducto = fs.readFileSync(path.join(__dirname, '../data/productos.json'));
         let productos = JSON.parse(archivoProducto);
-
-        productos = productos.fitler(producto => producto.id != req.params.id)
-
-        productosJSON = JSON.stringify(productos);
+    
+        let nuevaListaProductos = productos.fitler(producto => producto.id != req.params.id) /*Arreglar filter no filtra*/
+    
+        productosJSON = JSON.stringify(nuevaListaProductos);
         fs.writeFileSync(path.join(__dirname,'../data/productos.json'), productosJSON);
         
         res.redirect("eliminado")
     },
     eliminado:function(req,res){
-        res.render("listdoDeProductos")
+        res.render("home")
     },
 
     listadoProductos:function(req, res){
@@ -71,10 +71,6 @@ const indexController = {
     },
 
     editado:function(req, res){
-
-    },
-
-    eliminado:function(req, res){
 
     },
 
