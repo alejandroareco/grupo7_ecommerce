@@ -41,6 +41,21 @@ const indexController = {
       
     },
 
+    eliminar:function(req,res){
+        let archivoProducto = fs.readFileSync('./data/productos.json', {encoding:'utf-8'});
+        let productos = JSON.parse(archivoProducto);
+
+        productos = productos.fitler(producto => producto.id != req.params.id)
+
+        productosJSON = JSON.stringify(productos);
+        fs.writeFileSync('./data/productos.json', productosJSON);
+        
+        res.redirect("eliminado")
+    },
+    eliminado:function(req,res){
+        res.render("listdoDeProductos")
+    },
+
     listadoProductos:function(req, res){
         res.render('listadoDeProductos')
     },

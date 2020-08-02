@@ -6,13 +6,13 @@ const rutaCarrito = require('./src/routes/carrito');
 const rutaCargaProducto = require('./src/routes/cargaProducto');
 const rutaDetalleProducto = require('./src/routes/detalleProducto');
 const {check, validationResult, body} = require('express-validator'); //validator//
-//const methodOverride = require ('method-override');
+const methodOverride = require ('method-override');/*PUT Y DELETE*/
 
 app.listen(4000,() => console.log("Server corriendo en puerto 4000"));
 
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
-//app.use(methodOverride("_method"));
+app.use(methodOverride("_method"));/*PUT Y DELETE*/
 
 
 
