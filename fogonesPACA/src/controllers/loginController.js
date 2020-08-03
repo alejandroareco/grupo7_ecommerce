@@ -15,6 +15,7 @@ const indexController = {
         res.render('registro')
     },
     registrado:function(req,res){
+       
             let errores = validationResult(req);
             if(errores.isEmpty()) {
             res.send('se guardo el usuario')
