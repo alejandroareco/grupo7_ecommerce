@@ -43,7 +43,7 @@ router.post('/registro',[
     }).withMessage('el imail ingresado, esta registrado'),
 */
     check('password').isEmpty().isLength({min:8, max: 16}).withMessage('La contraseña tiene que tener un mínimo de 8 caracteres y un máximo de 16')]
-    ,upload.any(), loginController.registro);
+    ,upload.any(), loginController.registrado);
 
     
     module.exports = router;  

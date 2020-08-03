@@ -4,7 +4,7 @@ const bcrypt = require ('bcrypt');
 const {check, validationResult, body} = require('express-validator');//validator//
 
 
-const indexController = {
+const loginController = {
     login:function(req, res){
         res.render('login')
     },
@@ -21,7 +21,7 @@ const indexController = {
             res.send('se guardo el usuario')
             } else {
             res.render('registro', {
-             unosErrores: errores.errors
+            unosErrores: errores.errors
             })}
          
 
@@ -29,13 +29,13 @@ const indexController = {
         name: req.body.name,
         lastname: req.body.lastname,
         email: req.body.email,
-        password: bcrypt.hashSync(req.body.password,12),
+        //password: bcrypt.hashSync(req.body.password,12),
         avatar: req.files[0].filename,
         }
         //leer el archivo de usuarios que ya estaba//
 
         //let archivoUsuario = fs.readFileSync('./data/user.json', {encoding:'utf-8'}); 
-        let archivoUsuario = fs.readFileSync(path.join(__dirname,'../data/user.json'), {encoding:'utf-8'});
+        let archivoUsuario = fs.readFileSync(path.join(__dirname,'../data/user.json'), 'utf-8');
         let usuarios;
         if (archivoUsuario == "") {
             usuarios = []; //si no hay usuarios, creo un array de usuarios vacio//
@@ -60,4 +60,4 @@ const indexController = {
 };
 
 
-module.exports = indexController;
+module.exports = loginController;
