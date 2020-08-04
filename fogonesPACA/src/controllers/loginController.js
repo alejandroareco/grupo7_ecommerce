@@ -14,11 +14,11 @@ const loginController = {
     registro:function(req,res){
         res.render('registro')
     },
-    registrado:function(req,res){
+    registrado:function(req,res, next){
        
             let errores = validationResult(req);
             if(errores.isEmpty()) {
-            res.send('se guardo el usuario')
+            res.render('registrado')
             } else {
             res.render('registro', {
             unosErrores: errores.errors
@@ -29,7 +29,7 @@ const loginController = {
         name: req.body.name,
         lastname: req.body.lastname,
         email: req.body.email,
-        //password: bcrypt.hashSync(req.body.password,12),
+        //password: bcrypt.hashSync(req.body.password,12),//
         avatar: req.files[0].filename,
         }
         //leer el archivo de usuarios que ya estaba//
