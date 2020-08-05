@@ -1,6 +1,6 @@
 const fs = require ('fs');
 const path = require('path');
-const bcrypt = require ('bcrypt');
+const bcrypt = require ('bcryptjs');
 const {check, validationResult, body} = require('express-validator');//validator//
 
 
@@ -29,12 +29,10 @@ const loginController = {
         name: req.body.name,
         lastname: req.body.lastname,
         email: req.body.email,
-        //password: bcrypt.hashSync(req.body.password,12),//
+        password: bcrypt.hashSync(req.body.password,12),//
         avatar: req.files[0].filename,
         }
         //leer el archivo de usuarios que ya estaba//
-
-        //let archivoUsuario = fs.readFileSync('./data/user.json', {encoding:'utf-8'}); 
         let archivoUsuario = fs.readFileSync(path.join(__dirname,'../data/user.json'), 'utf-8');
         let usuarios;
         if (archivoUsuario == "") {
