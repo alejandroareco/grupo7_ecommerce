@@ -23,7 +23,9 @@ var storage = multer.diskStorage({
 router.post('/', upload.any(), cargaProductoController.cargarProducto); /*(enviar producto agreado a archivo json)*/
 router.get('/listadoProductos', cargaProductoController.listadoProductos); /*Listado de todos los productos cargados*/
 
-router.delete('/eliminar',cargaProductoController.eliminar);
+
+router.delete('/eliminar/:id',cargaProductoController.eliminar);
+router.get('/eliminar/:id', cargaProductoController.eliminarv)
 router.get('/eliminado', cargaProductoController.eliminado);/*Borrar producto del json*/
 
 

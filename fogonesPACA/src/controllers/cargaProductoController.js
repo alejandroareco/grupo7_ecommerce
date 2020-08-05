@@ -41,18 +41,23 @@ const indexController = {
       
     },
 
+    eliminarv:function(req,res){
+        res.render("listadoDeProductos")
+    },
+
     eliminar:function(req,res){
-        let archivoProducto = fs.readFileSync(path.join(__dirname, '../data/productos.json'));
+        let archivoProducto = fs.readFileSync(path.join(__dirname, '../data/productos.json', ));
         let productos = JSON.parse(archivoProducto);
     
-        let nuevaListaProductos = productos.fitler(producto => producto.id != req.params.id) /*Arreglar filter no filtra*/
+        productos.filter(productos => productos.id != req.params.id) /*Arreglar filter no filtra*/
     
-        productosJSON = JSON.stringify(nuevaListaProductos);
+        productosJSON = JSON.stringify(productos);
         fs.writeFileSync(path.join(__dirname,'../data/productos.json'), productosJSON);
         
-        res.redirect("eliminado")
+        res.redirect("listadoDeProductos")
     },
-    eliminado:function(req,res){
+
+    eliminado:function(req , res){
         res.render("home")
     },
 
