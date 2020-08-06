@@ -22,7 +22,8 @@ const loginController = {
             } else {
             res.render('registro', {
             unosErrores: errores.errors
-            })}
+            })
+        }
          
 
     let usuario = {

@@ -1,26 +1,15 @@
 const express = require ('express');
 const router = express.Router();
 const cargaProductoController = require('../controllers/cargaProductoController');
-const multer = require('multer'); /*requeri multer*/
 const path = require('path');
-
+const multerCargaProducto = require ('../middleware/multerCargaProducto')
 
 router.get('/',cargaProductoController.cargaProducto);/*Formulario de carga de producto*/
 
-/*ruta de almacenamiento de imagen*/
-var storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-      cb(null, './public/img/fotosProductosNuevos')
-    },
-    filename: function (req, file, cb) {
-      cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
-    }
-  })
-   
-  var upload = multer({ storage: storage });
+
   
 /* agregue funcionalidad para multer a la ruta upload.any() */
-router.post('/', upload.any(), cargaProductoController.cargarProducto); /*(enviar producto agreado a archivo json)*/
+router.post('/', multerCargaProducto.any(), cargaProductoController.cargarProducto); /*(enviar producto agreado a archivo json)*/
 router.get('/listadoProductos', cargaProductoController.listadoProductos); /*Listado de todos los productos cargados*/
 
 
