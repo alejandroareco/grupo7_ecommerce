@@ -6,9 +6,6 @@ const multerRegister = require('../middleware/multerRegister'); //modularice mul
 
 
 
-
-
-
 router.get('/',loginController.login);
 router.post('/',loginController.sesion);
 router.get('/registro',loginController.registro);
