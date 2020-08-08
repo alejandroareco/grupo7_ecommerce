@@ -2,6 +2,15 @@ const fs = require ('fs');
 const path = require('path');
 
 const indexController = {
+    carrito:function(req, res){
+        res.render('carrito')
+    },
+    detalleProducto:function(req, res){
+        res.render('detalleProducto')
+    },
+    home:function(req, res){
+        res.render('home')
+    },
 
     cargaProducto:function(req, res){
         res.render('cargaProducto')

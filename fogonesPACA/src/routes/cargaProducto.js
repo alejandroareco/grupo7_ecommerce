@@ -6,7 +6,9 @@ const multerCargaProducto = require ('../middleware/multerCargaProducto')
 
 router.get('/',cargaProductoController.cargaProducto);/*Formulario de carga de producto*/
 
-
+router.get('/carrito',cargaProductoController.carrito);
+router.get('/detalleProducto',cargaProductoController.detalleProducto);
+router.get('/home',cargaProductoController.home);
   
 /* agregue funcionalidad para multer a la ruta upload.any() */
 router.post('/', multerCargaProducto.any(), cargaProductoController.cargarProducto); /*(enviar producto agreado a archivo json)*/
