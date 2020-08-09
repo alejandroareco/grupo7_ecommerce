@@ -9,6 +9,7 @@ router.get('/',loginController.welcome);
 router.get('/home',loginController.home);
 router.get('/login',loginController.login);
 router.post('/', sesionValidation, loginController.sesion);
+router.get('/miCuenta', loginController.miCuenta);
 //router.post('/',loginController.sesion);
 router.get('/registro',loginController.registro);
 //aca se chequea el mail y el password que llega a travez del form de registro//

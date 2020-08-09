@@ -92,6 +92,9 @@ const loginController = {
         res.render('registrado');
 
     },
+    miCuenta:function(req,res){
+        res.render('miCuenta')
+    },
 
 };
 
