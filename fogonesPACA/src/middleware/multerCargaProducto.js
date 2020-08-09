@@ -1,5 +1,5 @@
 const multer = require('multer'); /*requeri multer*/
-
+const path = require ('path');
 
 /*ruta de almacenamiento de imagen*/
 var storage = multer.diskStorage({

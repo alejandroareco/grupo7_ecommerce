@@ -5,6 +5,12 @@ const {check, validationResult, body} = require('express-validator');//validator
 
 
 const loginController = {
+    welcome:function(req, res){
+        res.render('welcome')//agregue para 
+    },
+    home:function(req, res){
+        res.render('home')
+    },
     login:function(req, res){
         res.render('login')
     },

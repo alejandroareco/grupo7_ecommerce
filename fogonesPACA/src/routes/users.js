@@ -5,9 +5,10 @@ const registerValidation = require ('../validation/registerValidation'); //regis
 const multerRegister = require('../middleware/multerRegister'); //modularice multer al middleware //
 
 
-
-router.get('/',loginController.login);
-router.post('/',loginController.sesion);
+router.get('/',loginController.welcome);
+router.get('/home',loginController.home);
+router.get('/login',loginController.login);
+//router.post('/',loginController.sesion);
 router.get('/registro',loginController.registro);
 //aca se chequea el mail y el password que llega a travez del form de registro//
 router.post('/registro',multerRegister.any(), registerValidation, loginController.registrado); //modularice register a la carpeta de registerValidation//

@@ -12,6 +12,7 @@ app.use(express.json());
 app.use(methodOverride("_method"));/*PUT Y DELETE*/
 
 
+app.use('/',rutaLogin);
 app.use('/login',rutaLogin);
 app.use('/cargaProducto',rutaCargaProducto);
 
