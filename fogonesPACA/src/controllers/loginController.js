@@ -26,7 +26,7 @@ const loginController = {
                     
                     if(req.body.remember == "on") {
                         res.cookie('userCookie', usuarios[i].email, {maxAge: 60000 * 5});
-                    }
+                    } //COOKIE guardando email//
                     
                     return res.render('logueado');
                 }
@@ -38,6 +38,8 @@ const loginController = {
                     }
                 }
             })
+
+    
 
         } else {
             res.render('login', {

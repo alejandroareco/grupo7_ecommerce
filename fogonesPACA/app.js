@@ -11,7 +11,11 @@ app.listen(4000,() => console.log("Server corriendo en puerto 4000"));
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
 app.use(methodOverride("_method"));/*PUT Y DELETE*/
-app.use(session({secret:'ESTE ES UN SECRETO'})); /*SESSION*/
+app.use(session({
+    secret:'ESTE ES UN SECRETO',
+    resave: false,
+    saveUninitialized: true
+})); /*SESSION*/
 
 
 
