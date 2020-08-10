@@ -58,7 +58,7 @@ const indexController = {
         let archivoProducto = fs.readFileSync(path.join(__dirname, '../data/productos.json', ));
         let productos = JSON.parse(archivoProducto);
     
-        productos.filter(productos => productos.id != req.params.id) /*Arreglar filter no filtra*/
+        productos.filter(productos => productos.id != req.params.id) /*pendiente*/
     
         productosJSON = JSON.stringify(productos);
         fs.writeFileSync(path.join(__dirname,'../data/productos.json'), productosJSON);
