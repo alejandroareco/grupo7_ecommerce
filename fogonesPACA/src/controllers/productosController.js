@@ -5,6 +5,9 @@ const indexController = {
     carrito:function(req, res){
         res.render('carrito')
     },
+    productoAgregado:function(req,res){
+        /*Agregar producto al carrito*/        
+    },
     detalleProducto:function(req, res){
         res.render('detalleProducto')
     },
@@ -73,6 +76,9 @@ const indexController = {
     listadoProductos:function(req, res){
         res.render('listadoDeProductos')
     },
+    nosotros:function(req,res){
+        res.render("nosotros")
+    }
 
 /*
     detalleDeProducto:function(req, res){

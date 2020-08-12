@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0px;
+    }
+body{
+font-family: 'Roboto', Arial, Helvetica, sans-serif;
+
+}  
+section{
+    background-image: url(https://d26lpennugtm8s.cloudfront.net/stores/001/219/030/themes/new_linkedman/slide-1596577319454-8466217579-0adba90074a984d4589562b7b5900bae1596577348-1920-1920.jpg?1382979783);
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    background-size: cover;
+}
+body section p{
+    margin-left: auto;
+    margin-right: 45%;
+    width: 40%;
+    color: floralwhite; 
+    text-align: center;
+    font-size: large;   
+}

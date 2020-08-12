@@ -26,6 +26,6 @@ app.use(session({
 
 app.use('/',rutaLogin);
 app.use('/login',rutaLogin);
-app.use('/productos',rutaProductos);
+app.use('/',rutaProductos);
 
 app.listen(4000,() => console.log("Server corriendo en puerto 4000"));
