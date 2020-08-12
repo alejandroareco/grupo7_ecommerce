@@ -1,5 +1,5 @@
 ----------------------------------
-# Trabajo Integrador E-Commerce - Fogones PACA###
+# Trabajo Integrador E-Commerce - Fogones PACA
 ----------------------------------
 ## ***Grupo 7***
 
