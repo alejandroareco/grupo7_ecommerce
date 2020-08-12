@@ -67,6 +67,17 @@ article p{
     border-color: gray;
 
 }
+#carouse{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; 
+  width: 80%;
+}
+#envio{
+    margin-left: 10%;
+    margin-right: auto;
+    width: 80%;
+}
 
 
 
