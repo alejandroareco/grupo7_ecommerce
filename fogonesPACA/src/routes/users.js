@@ -4,12 +4,14 @@ const loginController = require('../controllers/loginController');
 const sesionValidation = require('../validation/sesionValidation');
 const registerValidation = require ('../validation/registerValidation'); //registerValidation funcionalidad de validator //
 const multerRegister = require('../middleware/multerRegister'); //modularice multer al middleware //
+const loggeduserMiddleware = require('../middleware/loggedUser')
 
 router.get('/',loginController.welcome);
 router.get('/home',loginController.home);
 router.get('/login',loginController.login);
+router.get('/logout',loginController.logout);
 router.post('/', sesionValidation, loginController.sesion);
-router.get('/miCuenta', loginController.miCuenta);
+router.get('/miCuenta',loggeduserMiddleware,loginController.miCuenta);
 //router.post('/',loginController.sesion);
 router.get('/registro',loginController.registro);
 //aca se chequea el mail y el password que llega a travez del form de registro//

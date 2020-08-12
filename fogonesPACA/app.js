@@ -6,7 +6,10 @@ const {check, validationResult, body} = require('express-validator'); //validato
 const methodOverride = require ('method-override');/*PUT Y DELETE*/
 const session = require ('express-session');
 
-app.listen(4000,() => console.log("Server corriendo en puerto 4000"));
+app.use(express.static(__dirname+ '/public'));
+
+app.set('views', './src/views');
+app.set('view engine', 'ejs');
 
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
@@ -17,12 +20,12 @@ app.use(session({
     saveUninitialized: true
 })); /*SESSION*/
 
+//app.use(cookieParser());
+
 
 
 app.use('/',rutaLogin);
 app.use('/login',rutaLogin);
 app.use('/productos',rutaProductos);
 
-app.use(express.static(__dirname+ '/public'));
-app.set('views', './src/views');
-app.set('view engine', 'ejs'); 
+app.listen(4000,() => console.log("Server corriendo en puerto 4000"));

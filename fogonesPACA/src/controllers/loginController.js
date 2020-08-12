@@ -17,24 +17,20 @@ const loginController = {
     login:function(req, res){
         res.render('login')
     },
-    sesion: function(req, res) {
+    sesion: function(req, res) {  
+        user = req.session.user      
         let errors = validationResult(req);
         if(errors.isEmpty()) {
             for(let i = 0; i < usuarios.length; i++) {
                 if(usuarios[i].email == req.body.email && bcrypt.compareSync(req.body.password, usuarios[i].password)) {
-                    req.session.user = usuarios[i].email
-                    
-                    if(req.body.remember == "on") {
-                        res.cookie('userCookie', usuarios[i].email, {maxAge: 60000 * 5});
-                    } //COOKIE guardando email//
-                    
+                    req.session.user = usuarios[i].email;
                     return res.render('logueado');
                 }
             }
             return res.render('login', {
                 errors: {
                     email: {
-                        msg: 'Credenciales inválidas. Inserta un email y contraseña registrado registrada'
+                        msg: 'Credenciales inválidas. Inserta un email y contraseña registrados'
                     }
                 }
             })
@@ -95,7 +91,10 @@ const loginController = {
     miCuenta:function(req,res){
         res.render('miCuenta')
     },
-
+    logout: function(req,res){
+        req.session.destroy();
+        res.redirect('/login')
+    },
 };
 
 

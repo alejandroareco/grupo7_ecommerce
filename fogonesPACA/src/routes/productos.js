@@ -3,22 +3,23 @@ const router = express.Router();
 const productosController = require('../controllers/productosController');
 const path = require('path');
 const multerCargaProducto = require ('../middleware/multerCargaProducto')
+const loggedUserMiddleware = require ('../middleware/loggedUser')
 
-router.get('/cargaProducto',productosController.cargaProducto);/*Formulario de carga de producto*/
+router.get('/cargaProducto',loggedUserMiddleware,productosController.cargaProducto);/*Formulario de carga de producto*/
 /* agregue funcionalidad para multer a la ruta upload.any() */
-router.post('/cargaProducto', multerCargaProducto.any(), productosController.cargarProducto); /*(enviar producto agreado a archivo json)*/
+router.post('/cargaProducto',loggedUserMiddleware, multerCargaProducto.any(), productosController.cargarProducto); /*(enviar producto agreado a archivo json)*/
 
-router.get('/carrito',productosController.carrito);
-router.get('/detalleProducto',productosController.detalleProducto);
+router.get('/carrito',loggedUserMiddleware,productosController.carrito);
+router.get('/detalleProducto',loggedUserMiddleware,productosController.detalleProducto);
 
   
 
 router.get('/listadoProductos',productosController.listadoProductos); /*Listado de todos los productos cargados*/
 
 
-router.delete('/eliminar/:id',productosController.eliminar);
-router.get('/eliminar/:id', productosController.eliminarv)
-router.get('/eliminado', productosController.eliminado);/*Borrar producto del json*/
+router.delete('/eliminar/:id',loggedUserMiddleware,productosController.eliminar);
+router.get('/eliminar/:id', loggedUserMiddleware,productosController.eliminarv)
+router.get('/eliminado', loggedUserMiddleware,productosController.eliminado);/*Borrar producto del json*/
 
 
 /*
@@ -31,4 +32,3 @@ router.put('products/:id',productosController.editado); Enviar producto editado 
 */
 
 module.exports = router;
-
