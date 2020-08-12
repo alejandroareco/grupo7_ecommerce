@@ -1,9 +1,9 @@
 ----------------------------------
 # Trabajo Integrador E-Commerce - Fogones PACA
 ----------------------------------
-## ***Grupo 7***
+## Grupo 7
 
-## ***Integrantes:*** 
+## Integrantes: 
 
 - Alejandro Areco
 - Patricio Eduardo Fernandez
@@ -27,7 +27,7 @@ www.sony.com.ar: propuesto por Ramiro, destaca por su simpleza y elegancia, faci
 www.doucals.com/it: propuestopor Ramiro. por su navegavilidad, el cabio de eje de los cursores, para movilizarte y los paneles desplegables lo hacen una muy buena opcion.
 
 ------------------------------------------------------------------------
-### Descripcion del proyecto
+## Descripcion del proyecto
 ------------------------------------------------------------------------
 
 El sitio ofrece venta y alquiler de fogones a Bioetanol. Objetos de decoracion y calefacción mediante un sistema de 
@@ -37,13 +37,13 @@ Si bien realiza envíos a todo el pais, apunta a un público mayormente ubicado 
 ------------------------------------------------------------------------
 ## Trello Board
 ------------------------------------------------------------------------
-### Tablero Trello: https://trello.com/b/t6shXWYF/grupo7-ecommerce
+#### Tablero Trello: https://trello.com/b/t6shXWYF/grupo7-ecommerce
 ------------------------------------------------------------------------
 ## Retrospectivas
 ------------------------------------------------------------------------
-### Sprint 2: https://retrotool.io/0sK-WqyJp
+#### Sprint 2: https://retrotool.io/0sK-WqyJp
 ------------------------------------------------------------------------
-### Sprint 3: https://retrotool.io/uSp0xWLGj
+#### Sprint 3: https://retrotool.io/uSp0xWLGj
 ------------------------------------------------------------------------
-### Sprint 4 :https://retrotool.io/_BSF0Vzgs
+#### Sprint 4 :https://retrotool.io/_BSF0Vzgs
 ------------------------------------------------------------------------
