@@ -5,6 +5,7 @@ const rutaProductos = require('./src/routes/productos');
 const {check, validationResult, body} = require('express-validator'); //validator//
 const methodOverride = require ('method-override');/*PUT Y DELETE*/
 const session = require ('express-session');
+const cookieParser = require ('cookie-parser');
 
 app.use(express.static(__dirname+ '/public'));
 
@@ -20,7 +21,7 @@ app.use(session({
     saveUninitialized: true
 })); /*SESSION*/
 
-//app.use(cookieParser());
+app.use(cookieParser());
 
 
 

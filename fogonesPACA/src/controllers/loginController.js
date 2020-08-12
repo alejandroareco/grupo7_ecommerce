@@ -23,7 +23,12 @@ const loginController = {
         if(errors.isEmpty()) {
             for(let i = 0; i < usuarios.length; i++) {
                 if(usuarios[i].email == req.body.email && bcrypt.compareSync(req.body.password, usuarios[i].password)) {
-                    req.session.user = usuarios[i].email;
+                    req.session.user = usuarios[i].email
+                    
+                    if(req.body.remember == "on") {
+                        res.cookie('userCookie', usuarios[i].email, {maxAge:60000 * 60})
+                    }
+
                     return res.render('logueado');
                 }
             }
@@ -34,8 +39,6 @@ const loginController = {
                     }
                 }
             })
-
-    
 
         } else {
             res.render('login', {
