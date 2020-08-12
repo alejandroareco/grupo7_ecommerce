@@ -26,3 +26,18 @@
 * Subestimar tiempos
 * perder el tiempo
 
+
+# 2020-07-24 - Retrospective Sprint 3
+
+## CONTINUAR HACIENDO
+* Comunicacion constante entre equipo.
+
+## HACER MAS
+* Pruebas y cometer errores, para aprender de los mismos!
+* Repasar material en Playground
+
+## COMENZAR A HACER
+* Empezar a trabajar antes en las consignas del sprint
+
+## HACER MENOS
+* Terminamos otra vez con lo justo en fecha de entrega.
