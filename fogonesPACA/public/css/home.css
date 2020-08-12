@@ -57,6 +57,11 @@ article p{
     width: 100%;
 }
 
+ul {
+    justify-content: center;
+}
+
+
 .btn{
     padding: 0;
     margin: 0;
