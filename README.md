@@ -35,19 +35,13 @@ combustión ecologica. Ofreciendo variedad de modelos y versiones de los mismos.
 Si bien realiza envíos a todo el pais, apunta a un público mayormente ubicado en Capital Federal y Provincia de Buenos Aires. En un rango de edad que va principalmente de los 25 a los 44 años. Y se destaca casi en un 90% el público femenino. 
 
 ------------------------------------------------------------------------
-### Tablero Trello
+## Tablero Trello: https://trello.com/b/t6shXWYF/grupo7-ecommerce
 ------------------------------------------------------------------------
-https://trello.com/b/t6shXWYF/grupo7-ecommerce
+## Sprints
 ------------------------------------------------------------------------
-### Sprint 2
+### Sprint 2: https://retrotool.io/0sK-WqyJp
+------------------------------------------------------------------------------------------------------------------------------------------------
+### Sprint 3: Retro:https://retrotool.io/uSp0xWLGj
 ------------------------------------------------------------------------
-Retro: https://retrotool.io/0sK-WqyJp
-------------------------------------------------------------------------
-### Sprint 3
-------------------------------------------------------------------------
-Retro:https://retrotool.io/uSp0xWLGj
-------------------------------------------------------------------------
-### Sprint 4
-------------------------------------------------------------------------
-Retro:https://retrotool.io/_BSF0Vzgs
+### Sprint 4 : Retro:https://retrotool.io/_BSF0Vzgs
 ------------------------------------------------------------------------
