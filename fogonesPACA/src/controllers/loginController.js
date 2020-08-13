@@ -32,7 +32,9 @@ const loginController = {
                         res.cookie('userCookie', usuarios[i].email, {maxAge:60000 * 60})
                     }
 
-                    return res.render('logueado');
+                    return res.render('logueado',{
+                        user:req.session.user
+                    });
                 }
             }
             return res.render('login', {
