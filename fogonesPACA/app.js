@@ -6,6 +6,7 @@ const {check, validationResult, body} = require('express-validator'); //validato
 const methodOverride = require ('method-override');/*PUT Y DELETE*/
 const session = require ('express-session');
 const cookieParser = require ('cookie-parser');
+const userCookie = require ('./src/middleware/userCookie');
 
 app.use(express.static(__dirname+ '/public'));
 
@@ -22,6 +23,7 @@ app.use(session({
 })); /*SESSION*/
 
 app.use(cookieParser());
+app.use(userCookie);
 
 
 

@@ -29,7 +29,7 @@ const loginController = {
                     req.session.user = usuarios[i].email
                     
                     if(req.body.remember == "on") {
-                        res.cookie('userCookie', usuarios[i].email, {maxAge:60000 * 60})
+                        res.cookie('userCookie', usuarios[i].email, {maxAge:60000 * 5})
                     }
 
                     return res.render('logueado',{
