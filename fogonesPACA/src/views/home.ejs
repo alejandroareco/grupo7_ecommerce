@@ -22,9 +22,12 @@
 <br>
 <body>
   <ul class="list-group list-group-horizontal-md">
+    <% if(!user) { %>
     <li class="list-group-item"><a href="/login" style= "color:black;">INICIAR SESIÓN</a></li>
     <li class="list-group-item"><a href="/login/registro" style= "color:black;">REGISTRATE</a></li>
+    <% } else { %> 
     <li class="list-group-item"><a href="/login/logout" style="color:black">CERRAR SESIÓN</a></li>
+    <% } %>
   </ul>
   <br>
   <div id="carouse" id="carouselExampleControls" class="carousel slide" data-ride="carousel">

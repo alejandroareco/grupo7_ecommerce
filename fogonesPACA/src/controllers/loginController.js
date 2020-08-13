@@ -12,8 +12,11 @@ const loginController = {
         res.render('welcome')//agregue para 
     },
     home:function(req, res){
-        res.render('home')
+        res.render('home',{
+            user:req.session.user
+        });
     },
+
     login:function(req, res){
         res.render('login')
     },
