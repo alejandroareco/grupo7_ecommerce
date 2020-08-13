@@ -26,6 +26,7 @@
 * Subestimar tiempos
 * perder el tiempo
 
+-------------------------------------------------------------------------------------
 
 # 2020-07-24 - Retrospective Sprint 3
 
@@ -41,3 +42,37 @@
 
 ## HACER MENOS
 * Terminamos otra vez con lo justo en fecha de entrega.
+
+-------------------------------------------------------------------------------------
+
+# 2020-08-11 - Retrospective Sprint 4
+
+## CONTINUAR HACIENDO
+* Comunicacion 
+* Darnos animos y 'backapearnos' entre los 3 🙂
+* trabajando!
+* dedicarle tiempo y comunicación
+
+## HACER MAS
+* Ver videos de Playground, clases grabadas y notas de notion, al igual que los slides de PlayGround
+* repasar mas conceptos y terminar los ejercicios pendientes (1)
+* Repasar clases y completar tareas pendientes
+
+## COMENZAR A HACER
+* Planificar tareas especificas para cada uno
+* discutir las tareas
+* Dividir tareas/administrar mejor el tiempo entre sprints y pg
+
+## HACER MENOS
+* Correr hasta ultimo minuto con la fecha de entrega
+* dormir menos.😌
+* Dejar consignas incompletas
+
+## DEJAR DE HACER
+* Perder el tiempo
+* Subestimar tiempo que conllevan las tareas
+* Empezar con el sprint dias antes de la entrega
+* subestimar la la tarea
+
+-------------------------------------------------------------------------------------
+
