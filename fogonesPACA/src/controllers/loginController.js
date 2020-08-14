@@ -59,7 +59,9 @@ const loginController = {
        
             let errores = validationResult(req);
             if(errores.isEmpty()) {
-            res.render('registrado')
+            res.render('registrado', {
+                user:req.session.user
+            })
             } else {
             res.render('registro', {
             unosErrores: errores.errors
