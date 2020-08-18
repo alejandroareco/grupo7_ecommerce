@@ -1,0 +1,9 @@
+const path = require('path');
+//al indicar la creacion de las carpetas de esta manera, crea /database dentro de /src //
+module.exports = {
+  'config': path.resolve('src/database/config', 'config.js'), 
+  'models-path': path.resolve('src/database/models'),
+  'seeders-path': path.resolve('src/database/seeders'),
+  'migrations-path': path.resolve('/src/database/migrations'),
+}
+
