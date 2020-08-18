@@ -21,8 +21,11 @@ router.post('/registro',multerRegister.any(), registerValidation, loginControlle
 //RUTA DE PRUEBA PARA FUNCIONAMIENTO DE SEQUELIZE//
 
 router.get('/testSequelize', function (req, res, next){
-    //db.sequelize.query('SELECT);
-    res.send("Holaaaaaaaaaaaaaaaaaaaaaa")
+   db.sequelize.query('SELECT * FROM users')
+   .then(function(response){
+        res.send(response)
+   })
+    //res.send("Holaaaaaaaaaaaaaaaaaaaaaa")
 });
 
 //RUTA DE PRUEBA PARA FUNCIONAMIENTO DE SEQUELIZE//
