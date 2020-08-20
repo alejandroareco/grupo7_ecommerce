@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Usuarios Registrados en Fogones Paca</h1>
+    <ul>
+        <% for (let i = 0; i < usuarios.length; i ++ ) { %>
+        <li>Nombre : <%= usuarios[i].firstname %> || Apellido : <%= usuarios[i].lastname %> </li>
+        <% } %> 
+    </ul>
+</body>
+</html>

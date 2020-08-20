@@ -18,17 +18,20 @@ router.get('/registro',loginController.registro);
 //aca se chequea el mail y el password que llega a travez del form de registro//
 router.post('/registro',multerRegister.any(), registerValidation, loginController.registrado); //modularice register a la carpeta de registerValidation//
    
-//RUTA DE PRUEBA PARA FUNCIONAMIENTO DE SEQUELIZE//
+////////////////////RUTA DE PRUEBA PARA FUNCIONAMIENTO DE SEQUELIZE///////////////////////////
 
 router.get('/testSequelize', function (req, res, next){
-   db.sequelize.query('SELECT * FROM users')
+   //db.sequelize.query('SELECT * FROM users')
+   db.User.findAll()
    .then(function(response){
-        res.send(response)
+        //res.send(response)
+        res.render('testSequelize', {
+             usuarios:response
+        })
    })
-    //res.send("Holaaaaaaaaaaaaaaaaaaaaaa")
 });
 
-//RUTA DE PRUEBA PARA FUNCIONAMIENTO DE SEQUELIZE//
+////////////////////RUTA DE PRUEBA PARA FUNCIONAMIENTO DE SEQUELIZE///////////////////////////
 
 
 module.exports = router;  
