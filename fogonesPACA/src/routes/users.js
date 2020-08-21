@@ -20,16 +20,26 @@ router.post('/registro',multerRegister.any(), registerValidation, loginControlle
    
 ////////////////////RUTA DE PRUEBA PARA FUNCIONAMIENTO DE SEQUELIZE///////////////////////////
 
-router.get('/testSequelize', function (req, res, next){
+//router.get('/testSequelize', function (req, res, next){
    //db.sequelize.query('SELECT * FROM users')
-   db.User.findAll()
-   .then(function(response){
+//   db.User.findAll()
+//   .then(function(response){
         //res.send(response)
-        res.render('testSequelize', {
-             usuarios:response
-        })
-   })
-});
+//        res.render('testSequelize', {
+//             usuarios:response
+//        })
+//   })
+//});
+
+router.get('/testSequelize', function (req, res, next){
+     db.Product.findAll()
+     .then(function(response){
+          //res.send(response)
+          res.render('testSequelize', {
+               products:response
+          })
+     })
+  });
 
 ////////////////////RUTA DE PRUEBA PARA FUNCIONAMIENTO DE SEQUELIZE///////////////////////////
 
