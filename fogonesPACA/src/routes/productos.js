@@ -13,7 +13,7 @@ router.get('/carrito',loggedUserMiddleware,productosController.carrito);
 router.post('/carrito',loggedUserMiddleware,productosController.productoAgregado);
 router.get('/detalleProducto',productosController.detalleProducto);
 router.get('/nosotros', productosController.nosotros);
-router.get('/listadoProductos',loggedUserMiddleware,productosController.listadoProductos); /*Listado de todos los productos cargados*/
+router.get('/listadoProductos',productosController.listadoProductos); /*Listado de todos los productos cargados*/
 
 
 router.delete('/eliminar/:id',loggedUserMiddleware,productosController.eliminar);

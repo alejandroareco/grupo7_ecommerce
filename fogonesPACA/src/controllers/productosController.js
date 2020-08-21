@@ -93,10 +93,6 @@ const indexController = {
     editado:function(req, res){
 
     },
-
-     productos:function(req, res){
-        res.render('home')
-    },
     */
 }
 
