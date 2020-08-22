@@ -74,7 +74,7 @@ const loginController = {
         lastname: req.body.lastname,
         email: req.body.email,
         password: bcrypt.hashSync(req.body.password,12),//
-        avatar: req.files[0].filename,
+        avatar: req.files[0].filename
         }
         //leer el archivo de usuarios que ya estaba//
         let archivoUsuario = fs.readFileSync(path.join(__dirname,'../data/user.json'), 'utf-8');
