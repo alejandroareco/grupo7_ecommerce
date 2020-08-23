@@ -22,6 +22,18 @@ module.exports = function (sequelize, dataTypes){
         description:  {
             type: dataTypes.STRING(100),
             allowNull: true
+        }, //agregue los campos imagenes para saber que nommre tienen//
+        image:  {
+            type: dataTypes.STRING(100),
+            allowNull: false
+        },
+        image1:  {
+            type: dataTypes.STRING(100),
+            allowNull: false
+        },
+        image2:  {
+            type: dataTypes.STRING(100),
+            allowNull: false
         },
     }
     
