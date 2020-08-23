@@ -47,7 +47,7 @@
                 </a>
             </div>
               <br>
-                <form method="post" action="cargaProducto" enctype="multipart/form-data">
+                <form method="post" action="edit" enctype="multipart/form-data">
                     <div class="form-group">
                       <!-- nuevo name="image" -->
                       <input type="file" class="form-control-file" onclick="enable()" id="exampleFormFile1" name="image" enctype="multipart/form-data">
@@ -81,14 +81,14 @@
            
                 <div class="form-group">
                   <label for="exampleFormControlInput1">Nombre del producto:</label>
-                  <input type="text" name="name" class="form-control" id="exampleFormControlInput1" placeholder="Producto" >
+                  <input type="text" name="name" class="form-control" id="exampleFormControlInput1" placeholder="Producto" value="<%=producto.name%> " >
                 </div>
         
                 <div id="precio" class="input-group mb-3">
                     <div class="input-group-prepend">
                       <span class="input-group-text">$</span>
                     </div>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)" name="price">
+                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)" name="price" value="<%=producto.price %>">
                     <div class="input-group-append">
                       <span class="input-group-text">.00</span>
                     </div>
@@ -96,7 +96,7 @@
         
                 <div id="stock" class="form-group">
                   <label for="exampleFormControlSelect1">Cantidad en stock:</label>
-                  <select class="form-control" id="exampleFormControlSelect1" name="stock">
+                  <select class="form-control" id="exampleFormControlSelect1" name="stock" value="<%=producto.stock %>">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -106,7 +106,7 @@
                 </div>
                 <div class="form-group">
                   <label for="exampleFormControlTextarea1">Descripción del producto:</label>
-                  <textarea name="description" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                  <textarea name="description" class="form-control" id="exampleFormControlTextarea1" rows="3" value="<%=producto.description %>"></textarea>
                   <br>
                   <button id="botonMobile" type="submit" class="btn btn-secondary btn-lg btn-block">Cargar producto</button>
                 </div>

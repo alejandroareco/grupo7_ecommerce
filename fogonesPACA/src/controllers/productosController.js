@@ -92,6 +92,14 @@ const indexController = {
     },
     nosotros:function(req,res){
         res.render("nosotros")
+    },
+
+    edit: function(req, res){
+        db.Product.findByPk(req.params.id)
+            .then(function(result) {
+            return res.render('editProducto',
+            {producto:result});
+        })
     }
 
 /*

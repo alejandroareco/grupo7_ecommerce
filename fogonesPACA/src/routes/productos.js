@@ -9,6 +9,8 @@ router.get('/cargaProducto',loggedUserMiddleware,productosController.cargaProduc
 /* agregue funcionalidad para multer a la ruta upload.any() */
 router.post('/cargaProducto',loggedUserMiddleware, multerCargaProducto.any(), productosController.cargarProducto); /*(enviar producto agreado a archivo json)*/
 
+router.get('/edit/:id', productosController.edit); //edita un producto//
+
 router.get('/carrito',loggedUserMiddleware,productosController.carrito);
 router.post('/carrito',loggedUserMiddleware,productosController.productoAgregado);
 router.get('/detalleProducto',productosController.detalleProducto);
