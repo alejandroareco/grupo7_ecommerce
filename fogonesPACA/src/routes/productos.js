@@ -10,6 +10,8 @@ router.get('/cargaProducto',loggedUserMiddleware,productosController.cargaProduc
 router.post('/cargaProducto',loggedUserMiddleware, multerCargaProducto.any(), productosController.cargarProducto); /*(enviar producto agreado a archivo json)*/
 
 router.get('/edit/:id', productosController.edit); //edita un producto//
+router.post('/edit/:id', multerCargaProducto.any(), productosController.editado);
+router.post('/borrado/:id',multerCargaProducto.any(), productosController.borrado);// borrado de SQL
 
 router.get('/carrito',loggedUserMiddleware,productosController.carrito);
 router.post('/carrito',loggedUserMiddleware,productosController.productoAgregado);
@@ -21,6 +23,7 @@ router.get('/listadoProductos',productosController.listadoProductos); /*Listado 
 router.delete('/eliminar/:id',loggedUserMiddleware,productosController.eliminar);
 router.get('/eliminar/:id', loggedUserMiddleware,productosController.eliminarv)
 router.get('/eliminado', loggedUserMiddleware,productosController.eliminado);/*Borrar producto del json*/
+
 
 
 /*

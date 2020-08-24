@@ -52,6 +52,7 @@ router.get('/panel', function (req, res, next){
           })
      })
   });
+  
 
 
 module.exports = router;  

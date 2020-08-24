@@ -1,6 +1,7 @@
 const fs = require ('fs');
 const path = require('path');
 const db = require('../database/models');
+//const { delete } = require('../routes/productos');
 
 const indexController = {
     carrito:function(req, res){
@@ -100,22 +101,46 @@ const indexController = {
             return res.render('editProducto',
             {producto:result});
         })
-    }
+    },
 
-/*
+
+    editado:function(req, res, next){
+        db.Product.update({
+            name: req.body.name,
+            description: req.body.description,
+            /* aca saca los nombres que le da multer con date.now()(tiene 3 posiciones el array req.files[2])*/
+            image: (req.files[0] == undefined) ? 'empty' : req.files[0].filename,
+            image1: (req.files[1] == undefined) ? 'empty' : req.files[1].filename,
+            image2: (req.files[2] == undefined) ? 'empty' : req.files[2].filename,
+            stock: req.body.stock,
+            price: req.body.price,
+        },
+        {
+            where: {
+                id: req.params.id
+            }
+        })
+        .then(function(result) {
+           return res.redirect('/edit/'+req.params.id)
+        })
+    },
+    
+    borrado:function(req, res, next){
+        db.Product.destroy({
+                where: {
+                id: req.params.id
+            }
+        })
+        res.redirect("/panel")
+        }
+
+/*  
     detalleDeProducto:function(req, res){
         
-    },
+    },*/
 
 
-    editar:function(req, res){
 
-    },
-
-    editado:function(req, res){
-
-    },
-    */
 }
 
 

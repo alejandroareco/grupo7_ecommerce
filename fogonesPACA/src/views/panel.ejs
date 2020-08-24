@@ -26,6 +26,7 @@
                 <th scope="col">Precio</th>
                 <th scope="col">STOCK</th>
                 <th scope="col">Desctripcion</th>
+                <th scope="col">eliminar</th>
               </tr>
               
                 <% for (let i = 0; i < products.length; i ++ ) { %>
@@ -36,6 +37,9 @@
                     <td><%=products[i].price %></td>
                     <td><%=products[i].stock %></td>   
                     <td><%=products[i].description %></td> 
+                    <form action="" method="POST"">
+                      <td><a type="submit" href="/borrado/<%=products[i].id %>"><i class="far fa-trash-alt"></i></a></td>
+                    </form>
                     <% } %> 
                 </tr>   
             </table>

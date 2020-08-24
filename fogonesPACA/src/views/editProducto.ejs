@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carga de productos</title>
+    <title>Editar Producto</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> 
 
@@ -47,10 +47,10 @@
                 </a>
             </div>
               <br>
-                <form method="post" action="edit" enctype="multipart/form-data">
+              <form method="POST" action='' enctype="multipart/form-data">
                     <div class="form-group">
                       <!-- nuevo name="image" -->
-                      <input type="file" class="form-control-file" onclick="enable()" id="exampleFormFile1" name="image" enctype="multipart/form-data">
+                      <input type="file" class="form-control-file" onclick="enable()" id="exampleFormFile1" name="image" value="<%=producto.image %>" enctype="multipart/form-data">
                       <!-- nuevo input name="image1"-->
                       <script>
                           function disable() {
@@ -61,7 +61,7 @@
                           }
                           </script>
           
-                      <input type="file" class="form-control-file" onclick="enable1()" disabled="true" id="exampleFile2" name="image1" enctype="multipart/form-data">
+                      <input type="file" class="form-control-file" onclick="enable1()" disabled="true" id="exampleFile2" name="image1" value="<%=producto.image1 %>" enctype="multipart/form-data">
                       <!-- nuevo input name="image2"-->
           
                       <script>
@@ -72,12 +72,12 @@
                           document.getElementById("exampleFile3").disabled = false;
                           }
                           </script>
-                      <input type="file" class="form-control-file" onclick="enable1()" disabled="true" id="exampleFile3" name="image2" enctype="multipart/form-data">
+                      <input type="file" class="form-control-file" onclick="enable1()" disabled="true" id="exampleFile3" name="image2" value="<%=producto.image %>" enctype="multipart/form-data">
                       </div>
-           <!--elimine el form (estaba cagando la carga ahora es un gran form) -->
-          </div>
-          <br>
-          <div class="col-12 col-md-6">
+                  <!--elimine el form (estaba cagando la carga ahora es un gran form) -->
+                 </div>
+                 <br>
+                 <div class="col-12 col-md-6"> 
            
                 <div class="form-group">
                   <label for="exampleFormControlInput1">Nombre del producto:</label>
@@ -106,11 +106,16 @@
                 </div>
                 <div class="form-group">
                   <label for="exampleFormControlTextarea1">Descripción del producto:</label>
-                  <textarea name="description" class="form-control" id="exampleFormControlTextarea1" rows="3" value="<%=producto.description %>"></textarea>
+                  <input name="description" class="form-control" id="exampleFormControlTextarea1" rows="3" value="<%=producto.description %>"></textarea>
                   <br>
                   <button id="botonMobile" type="submit" class="btn btn-secondary btn-lg btn-block">Cargar producto</button>
+                  
                 </div>
               </form>
+              <br>
+                  <form action='/borrado/<%=producto.id %>' method='POST'>
+                  <button type="submit" class="btn btn-secondary btn-sm btn-block">borrar producto</button>
+                  </form>
           </div>
         </div>
 
