@@ -29,6 +29,6 @@ app.use(userCookie);
 
 app.use('/',rutaLogin);
 app.use('/login',rutaLogin);
-app.use('/',rutaProductos);
+app.use('/productos',rutaProductos);
 
 app.listen(4000,() => console.log("Server corriendo en puerto 4000"));

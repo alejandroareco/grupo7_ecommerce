@@ -10,7 +10,7 @@ router.get('/cargaProducto',loggedUserMiddleware,productosController.cargaProduc
 router.post('/cargaProducto',loggedUserMiddleware, multerCargaProducto.any(), productosController.cargarProducto); /*(enviar producto agreado a archivo json)*/
 
 router.get('/edit/:id', productosController.edit); //edita un producto//
-router.post('/edit/:id', multerCargaProducto.any(), productosController.editado);
+router.post('/productos/edit/:id', multerCargaProducto.any(), productosController.editado);
 router.post('/borrado/:id',multerCargaProducto.any(), productosController.borrado);// borrado de SQL
 
 router.get('/carrito',loggedUserMiddleware,productosController.carrito);

@@ -33,17 +33,17 @@
                  <tr>
                     
                     <td><%=products[i].id %></td>
-                    <td><a href="/edit/<%=products[i].id %>"> <%=products[i].name %></a> </td>
+                    <td><a href="/productos/edit/<%=products[i].id %>"> <%=products[i].name %></a> </td>
                     <td><%=products[i].price %></td>
                     <td><%=products[i].stock %></td>   
                     <td><%=products[i].description %></td> 
-                    <form action="" method="POST"">
-                      <td><a type="submit" href="/borrado/<%=products[i].id %>"><i class="far fa-trash-alt"></i></a></td>
+                    <form action="/productos/borrado/<%=products[i].id %>" method="POST">
+                      <td><input value="borrar" type="submit" ></td>
                     </form>
                     <% } %> 
                 </tr>   
             </table>
-     </div>
+     </div> 
     </div>
              
       
