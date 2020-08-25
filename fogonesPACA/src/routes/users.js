@@ -43,16 +43,24 @@ router.get('/testSequelize', function (req, res, next){
 
 ////////////////////RUTA DE PRUEBA PARA FUNCIONAMIENTO DE SEQUELIZE///////////////////////////
 
-router.get('/panel', function (req, res, next){
-     db.Product.findAll()
-     .then(function(response){
-          //res.send(response)
-          res.render('panel', {
-               products:response
-          })
-     })
-  });
+
+////// -------------------------------------------------------------------------- //////
+
+
+////////////////////ESTO HACIA ROMPER EL REGISTRO, HABRIA QUE PROBARLO EN ROUTES/PRODUCTS ///////////////////////////
+
+
+//router.get('/panel', function (req, res, next){
+//     db.Product.findAll()
+//     .then(function(response){
+//          //res.send(response)
+//          res.render('panel', {
+//               products:response
+//          })
+//     })
+//  });
   
+////////////////////ESTO HACIA ROMPER EL REGISTRO, HABRIA QUE PROBARLO EN ROUTES/PRODUCTS ///////////////////////////
 
 
 module.exports = router;  
