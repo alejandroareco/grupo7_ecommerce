@@ -9,7 +9,7 @@ let db = require('../database/models');
 
 //router.get('/',loginController.welcome);
 //router.get('/home',loginController.home);
-router.get('/login',loginController.login);
+router.get('/',loginController.login);
 router.get('/logout',loginController.logout);
 router.post('/', sesionValidation, loginController.sesion);
 router.get('/miCuenta',loggeduserMiddleware,loginController.miCuenta);
