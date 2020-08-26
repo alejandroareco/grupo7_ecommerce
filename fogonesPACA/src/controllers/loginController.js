@@ -8,14 +8,14 @@ usuarios = JSON.parse(usuarios); //VARIABLE PARA LEER LOS USUARIOS REGISTRADOS /
 
 
 const loginController = {
-    welcome:function(req, res){
-        res.render('welcome')//agregue para 
-    },
-    home:function(req, res){
-        res.render('home',{
-            user:req.session.user
-        });
-    },
+    //welcome:function(req, res){
+    //    res.render('welcome')//agregue para 
+    //},
+    //home:function(req, res){
+    //    res.render('home',{
+    //        user:req.session.user
+    //    });
+    //},
 
     login:function(req, res){
         res.render('login')

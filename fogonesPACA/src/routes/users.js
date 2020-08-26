@@ -7,8 +7,8 @@ const multerRegister = require('../middleware/multerRegister'); //modularice mul
 const loggeduserMiddleware = require('../middleware/loggedUser');
 let db = require('../database/models');
 
-router.get('/',loginController.welcome);
-router.get('/home',loginController.home);
+//router.get('/',loginController.welcome);
+//router.get('/home',loginController.home);
 router.get('/login',loginController.login);
 router.get('/logout',loginController.logout);
 router.post('/', sesionValidation, loginController.sesion);

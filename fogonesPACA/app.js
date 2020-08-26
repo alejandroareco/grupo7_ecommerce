@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const rutaLogin = require('./src/routes/users');
 const rutaProductos = require('./src/routes/productos');
+const rutaHome = require('./src/routes/home');
 const {check, validationResult, body} = require('express-validator'); //validator//
 const methodOverride = require ('method-override');/*PUT Y DELETE*/
 const session = require ('express-session');
@@ -27,7 +28,7 @@ app.use(userCookie);
 
 
 
-app.use('/',rutaLogin);
+app.use('/',rutaHome);
 app.use('/login',rutaLogin);
 app.use('/productos',rutaProductos);
 
