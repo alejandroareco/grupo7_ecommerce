@@ -20,14 +20,14 @@
   <%-include('./homeHeader.ejs')%>
 </header>
 <br>
-<body>
+<body> 
   <ul class="list-group list-group-horizontal-md">
-    <% if(!user) { %>
-    <li class="list-group-item"><a href="/login" style= "color:black;">INICIAR SESIÓN</a></li>
-    <li class="list-group-item"><a href="/login/registro" style= "color:black;">REGISTRATE</a></li>
-    <% } else { %> 
-    <li class="list-group-item"><a href="/login/logout" style="color:black">CERRAR SESIÓN</a></li>
-    <% } %>
+    <%  if(!user) { %>
+      <li class="list-group-item"><a href="/login" style= "color:black;">INICIAR SESIÓN</a></li>
+      <li class="list-group-item"><a href="/login/registro" style= "color:black;">REGISTRATE</a></li>
+      <% } else { %> 
+      <li class="list-group-item"><a href="/login/logout" style="color:black">CERRAR SESIÓN</a></li>
+      <% } %>
   </ul>
   <br>
   <div id="carouse" id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -56,145 +56,27 @@
         <div class="container d-flex flex-wrap">
           <form action="./productos/detalleProducto" method="GET">
             <div class="row">
-              
-              <article class="col-12 col-md-6 col-lg-3" class="a">
-                <img class="producto" src="img/DSC_0243.JPG" alt="">
-                <h4>$6.770</h4>
-                <button type="submit" class="btn btn-info">detalle</button>
-                <button type="submit" class="btn btn-info">comprar</button>
-                <p> “La hiciste llorar, y luego yo lloré, y Maggie rió…Todo fue una confusión”, Homero </p>
-              </article>
-            
-              <article class="col-12 col-md-6 col-lg-3" class="a">
-                <img class="producto" src="img/DSC_0243.JPG" alt="">
-                <h4>$6.770</h4>
-                <button type="submit" class="btn btn-info">detalle</button>
-                <button type="submit" class="btn btn-info">comprar</button>
-                <p> “La hiciste llorar, y luego yo lloré, y Maggie rió…Todo fue una confusión”, Homero </p>
-              </article>
-              
-              
-              
-              <article class="col-12 col-md-6 col-lg-3" class="a">
-                <img class="producto" src="img/DSC_0243.JPG" alt="">
-                <h4>$6.770</h4>
-                <button type="submit" class="btn btn-info">detalle</button></form>
-                <button type="submit" class="btn btn-info">comprar</button>
-                <p> “La hiciste llorar, y luego yo lloré, y Maggie rió…Todo fue una confusión”, Homero </p>
-              </article>
-              
-              <article class="col-12 col-md-6 col-lg-3" class="a">
-                <img class="producto" src="img/DSC_0243.JPG" alt="">
-                <h4>$6.770</h4>
-                <button type="submit" class="btn btn-info">detalle</button>
-                <button type="submit" class="btn btn-info">comprar</button>
-                <p> “La hiciste llorar, y luego yo lloré, y Maggie rió…Todo fue una confusión”, Homero </p>
-              </article>
-              
-              
-              <article class="col-12 col-md-6 col-lg-3" class="a">
-                <img class="producto" src="img/DSC_0243.JPG" alt="">
-                <h4>$6.770</h4>
-                <button type="submit" class="btn btn-info">detalle</button>
-                <button type="submit" class="btn btn-info">comprar</button>
-                <p> “La hiciste llorar, y luego yo lloré, y Maggie rió…Todo fue una confusión”, Homero </p>
-              </article>
-              
-              <article class="col-12 col-md-6 col-lg-3" class="a">
-                <img class="producto" src="img/DSC_0243.JPG" alt="">
-                <h4>$6.770</h4>
-                <button type="submit" class="btn btn-info">detalle</button>
-                <button type="submit" class="btn btn-info">comprar</button>
-                <p> “La hiciste llorar, y luego yo lloré, y Maggie rió…Todo fue una confusión”, Homero </p>
-              </article>
-              
-              
-              
-              <article class="col-12 col-md-6 col-lg-3" class="a">
-                <img class="producto" src="img/DSC_0243.JPG" alt="">
-                <h4>$6.770</h4>
-                <button type="submit" class="btn btn-info">detalle</button>
-                <button type="submit" class="btn btn-info">comprar</button>
-                <p> “La hiciste llorar, y luego yo lloré, y Maggie rió…Todo fue una confusión”, Homero </p>
-              </article>
-              
-              <article class="col-12 col-md-6 col-lg-3" class="a">
-                <img class="producto" src="img/DSC_0243.JPG" alt="">
-                <h4>$6.770</h4>
-                <button type="submit" class="btn btn-info">detalle</button>
-                <button type="submit" class="btn btn-info">comprar</button>
-                <p> “La hiciste llorar, y luego yo lloré, y Maggie rió…Todo fue una confusión”, Homero </p>
-              </article>
 
-              <article class="col-12 col-md-6 col-lg-3" class="a">
+              <% for (let i = 0; i < producto.length; i ++ ) { %>
+                <tr>                    
+               <article class="col-12 col-md-6 col-lg-3" class="a">
                 <img class="producto" src="img/DSC_0243.JPG" alt="">
-                <h4>$6.770</h4>
-                <button type="submit" class="btn btn-info">detalle</button>
+                <h4>$<td><%=producto[i].price %></td></h4>
+                <h3><td><%=producto[i].name %></td></h3>
+                <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Detalle</button>
                 <button type="submit" class="btn btn-info">comprar</button>
-                <p> “La hiciste llorar, y luego yo lloré, y Maggie rió…Todo fue una confusión”, Homero </p>
+                <div class="collapse" id="collapseExample">
+                  <div class="card card-body">
+                    <p>
+                    <ul>
+                      <li><td><%=producto[i].description %></td></li>
+                    </ul>
+                  </p>
+                  </div> 
+                </div>
               </article>
-              
-              <article class="col-12 col-md-6 col-lg-3" class="a">
-                <img class="producto" src="img/DSC_0243.JPG" alt="">
-                <h4>$6.770</h4>
-                <button type="submit" class="btn btn-info">detalle</button>
-                <button type="submit" class="btn btn-info">comprar</button>
-                <p> “La hiciste llorar, y luego yo lloré, y Maggie rió…Todo fue una confusión”, Homero </p>
-              </article>
-              
-              
-              
-              <article class="col-12 col-md-6 col-lg-3" class="a">
-                <img class="producto" src="img/DSC_0243.JPG" alt="">
-                <h4>$6.770</h4>
-                <button type="submit" class="btn btn-info">detalle</button>
-                <button type="submit" class="btn btn-info">comprar</button>
-                <p> “La hiciste llorar, y luego yo lloré, y Maggie rió…Todo fue una confusión”, Homero </p>
-              </article>
-              
-              <article class="col-12 col-md-6 col-lg-3" class="a">
-                <img class="producto" src="img/DSC_0243.JPG" alt="">
-                <h4>$6.770</h4>
-                <button type="submit" class="btn btn-info">detalle</button>
-                <button type="submit" class="btn btn-info">comprar</button>
-                <p> “La hiciste llorar, y luego yo lloré, y Maggie rió…Todo fue una confusión”, Homero </p>
-              </article>
-              
-              
-              <article class="col-12 col-md-6 col-lg-3" class="a">
-                <img class="producto" src="img/DSC_0243.JPG" alt="">
-                <h4>$6.770</h4>
-                <button type="submit" class="btn btn-info">detalle</button>
-                <button type="submit" class="btn btn-info">comprar</button>
-                <p> “La hiciste llorar, y luego yo lloré, y Maggie rió…Todo fue una confusión”, Homero </p>
-              </article>
-              
-              <article class="col-12 col-md-6 col-lg-3" class="a">
-                <img class="producto" src="img/DSC_0243.JPG" alt="">
-                <h4>$6.770</h4>
-                <button type="submit" class="btn btn-info">detalle</button>
-                <button type="submit" class="btn btn-info">comprar</button>
-                <p> “La hiciste llorar, y luego yo lloré, y Maggie rió…Todo fue una confusión”, Homero </p>
-              </article>
-              
-              
-              
-              <article class="col-12 col-md-6 col-lg-3" class="a">
-                <img class="producto" src="img/DSC_0243.JPG" alt="">
-                <h4>$6.770</h4>
-                <button type="submit" class="btn btn-info">detalle</button>
-                <button type="submit" class="btn btn-info">comprar</button>
-                <p> “La hiciste llorar, y luego yo lloré, y Maggie rió…Todo fue una confusión”, Homero </p>
-              </article>
-              
-              <article class="col-12 col-md-6 col-lg-3" class="a">
-                <img class="producto" src="img/DSC_0243.JPG" alt="">
-                <h4>$6.770</h4>
-                <button type="submit" class="btn btn-info">detalle</button>
-                <button type="submit" class="btn btn-info">comprar</button>
-                <p> “La hiciste llorar, y luego yo lloré, y Maggie rió…Todo fue una confusión”, Homero </p>
-              </article>
-            
+              <% } %> 
+              </tr>             
             </div>
           </form>
     </div>	

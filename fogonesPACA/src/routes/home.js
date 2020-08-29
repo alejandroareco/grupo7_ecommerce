@@ -7,5 +7,4 @@ const loggedUserMiddleware = require ('../middleware/loggedUser')
 
 router.get('/',homeController.welcome);
 router.get('/home',homeController.home);
-
 module.exports = router;  
