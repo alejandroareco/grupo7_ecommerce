@@ -95,6 +95,17 @@ const indexController = {
         res.render("nosotros")
     },
 
+
+    
+    panelProducto: function(req, res, next){
+        db.Product.findAll()
+            .then(function(result) {
+            return res.render('panelProducto',
+            {producto:result});
+        })
+    },
+
+    
     edit: function(req, res){
         db.Product.findByPk(req.params.id)
             .then(function(result) {

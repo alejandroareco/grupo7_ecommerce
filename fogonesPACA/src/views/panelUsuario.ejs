@@ -17,32 +17,41 @@
       </header>
     
 <div class="container text-center text-md-left mt-5">
-  
-          <h1>Productos vigentes</h1>
+     
+            <h1>Usuarios vigentes</h1>
             <table>
               <tr>
                 <th scope="col">Id</th>
-                <th scope="col">Nombre producto</th>
-                <th scope="col">Precio</th>
-                <th scope="col">STOCK</th>
-                <th scope="col">Desctripcion</th>
-                <th scope="col">eliminar</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">e-mail</th>
+               
+                <th scope="col">direccion</th>
+                <th scope="col">Tel.</th>
+                <th scope="col">Borrar</th>
               </tr>
               
-                <% for (let i = 0; i < products.length; i ++ ) { %>
+                <% for (let i = 0; i < usuario.length; i ++ ) { %>
                  <tr>
                     
-                    <td><%=products[i].id %></td>
-                    <td><a href="/productos/edit/<%=products[i].id %>"> <%=products[i].name %></a> </td>
-                    <td><%=products[i].price %></td>
-                    <td><%=products[i].stock %></td>   
-                    <td><%=products[i].description %></td> 
-                    <form action="/productos/borrado/<%=products[i].id %>" method="POST">
+                    <td><%=usuario[i].id %></td>
+                    <td> <%=usuario[i].firstname %></a> </td>
+                    <td><%=usuario[i].lastname %></td>
+                    <td><%=usuario[i].email %></td>   
+                    
+                    <td><%=usuario[i].address %></td>
+                    <td><%=usuario[i].phone %></td>
+
+                    <form action="/usuario/borrado/<%=usuario[i].id %>" method="POST">
                       <td><input value="borrar" type="submit" ></td>
                     </form>
                     <% } %> 
                 </tr>   
-            </table>
+            </table>  
+            
+            
+
+
      </div> 
     </div>
              

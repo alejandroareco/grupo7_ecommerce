@@ -32,4 +32,4 @@ app.use('/',rutaHome);
 app.use('/login',rutaLogin);
 app.use('/productos',rutaProductos);
 
-app.listen(4000,() => console.log("Server corriendo en puerto 4000"));
+app.listen(4000,() => console.log("Server corriendo http://localhost:4000/"));

@@ -9,8 +9,10 @@ router.get('/cargaProducto',loggedUserMiddleware,productosController.cargaProduc
 /* agregue funcionalidad para multer a la ruta upload.any() */
 router.post('/cargaProducto',loggedUserMiddleware, multerCargaProducto.any(), productosController.cargarProducto); /*(enviar producto agreado a archivo json)*/
 
+
+router.get('/panelProducto', productosController.panelProducto )
 router.get('/edit/:id', productosController.edit); //edita un producto//
-router.post('/productos/edit/:id', multerCargaProducto.any(), productosController.editado);
+router.post('/edit/:id', multerCargaProducto.any(), productosController.editado);
 router.post('/borrado/:id',multerCargaProducto.any(), productosController.borrado);// borrado de SQL
 
 router.get('/carrito',loggedUserMiddleware,productosController.carrito);

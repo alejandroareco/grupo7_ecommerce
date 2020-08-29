@@ -2,6 +2,8 @@ const fs = require ('fs');
 const path = require('path');
 const bcrypt = require ('bcryptjs');
 const {check, validationResult, body} = require('express-validator');//validator//
+let db = require('../database/models');
+
 
 let usuarios = fs.readFileSync(path.join(__dirname, '../data/user.json'), 'utf8');
 usuarios = JSON.parse(usuarios); //VARIABLE PARA LEER LOS USUARIOS REGISTRADOS //
@@ -55,9 +57,25 @@ const loginController = {
     registro:function(req,res){
         res.render('registro')
     },
+
+    //funcionalidad para grabar SQL / tambien modifique el modelo para poder grabar (ramiro)
+
     registrado:function(req,res, next){
-       
-            let errores = validationResult(req);
+        db.User.create({
+            firstname: req.body.firstname,
+            lastname: req.body.lastname,
+            email: req.body.email,
+            passw: bcrypt.hashSync(req.body.passw,12),
+            address: req.body.address,
+            phone: req.body.phone,
+            avatar: (req.files[0] == undefined) ? 'empty' : req.files[0].filename
+        });
+        res.render('registrado');
+
+        //silencie el grabado del JSON me daba errores con la validacion /////////////////////////////////////////////
+        /*
+
+        let errores = validationResult(req);
             if(errores.isEmpty()) {
             res.render('registrado', {
                 user:req.session.user
@@ -68,13 +86,12 @@ const loginController = {
             })
         }
          
-
-    let usuario = {
-        name: req.body.name,
+        let usuario = {
+        firstname: req.body.name,
         lastname: req.body.lastname,
         email: req.body.email,
-        password: bcrypt.hashSync(req.body.password,12),//
-        avatar: req.files[0].filename
+        passw: bcrypt.hashSync(req.body.password,12),//
+        avatar: (req.files[0] == undefined) ? 'empty' : req.files[0].filename
         }
         //leer el archivo de usuarios que ya estaba//
         let archivoUsuario = fs.readFileSync(path.join(__dirname,'../data/user.json'), 'utf-8');
@@ -84,27 +101,79 @@ const loginController = {
         }else{
             usuarios = JSON.parse(archivoUsuario); //de lo contrario, descomprimo la lista para poder usarla//
         }
-
         usuarios.push(usuario); //a la lista, le agrego el usuario nuevo//
-
         //con la informacion actualizada, le empaqueto para poder ser utilizada//
-
         usuariosJSON = JSON.stringify(usuarios); 
-
         fs.writeFileSync(path.join(__dirname,'../data/user.json'), usuariosJSON);
-
         //finalmente, envio al usuario a la vista de usuario registrado//
-
-        res.render('registrado');
-
+        res.render('registrado');*/
     },
-    miCuenta:function(req,res){
+
+    
+    edit: function(req, res){
+       
+    },
+
+
+    editado:function(req, res, next){
+        db.User.update({
+            firstname: req.body.firstname,
+            lastname: req.body.lastname,
+            email: req.body.email,
+            passw: bcrypt.hashSync(req.body.passw,12),
+            address: req.body.address,
+            phone: req.body.phone,
+            avatar: (req.files[0] == undefined) ? 'empty' : req.files[0].filename
+        },
+        {
+            where: {
+                id: req.params.id
+            }
+        })
+        .then(function(result) {
+           return res.redirect('mi cuenta')
+        })
+    },
+
+
+    
+    borrado:function(req, res, next){
+        db.User.destroy({
+                where: {
+                id: req.params.id
+            }
+        })
+        res.redirect("/panel")
+    },
+
+
+    miCuenta:function(req,res, next){
+        db.User.findOne({ where: { email: req.session.user } })
+        .then(function(result) {
+            //res.send(response)
+        return res.render('miCuenta',
+        {user:result});
+    })
+        
         res.render('miCuenta')
     },
+
+
     logout: function(req,res){
         req.session.destroy();
         res.redirect('/login')
     },
+
+
+    panelUser: function (req, res, next){
+        db.User.findAll()
+        .then(function(response){
+         //res.send(response)
+        res.render('panelUsuario', {
+        usuario:response}
+        )})
+    },
+
 };
 
 
