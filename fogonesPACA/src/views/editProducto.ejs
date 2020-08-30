@@ -47,7 +47,7 @@
                 </a>
             </div>
               <br>
-              <form method="POST" action='' enctype="multipart/form-data">
+              <form method="POST" action='/productos/edit/<%=producto.id %>' enctype="multipart/form-data">
                     <div class="form-group">
                       <!-- nuevo name="image" -->
                       <input type="file" class="form-control-file" onclick="enable()" id="exampleFormFile1" name="image" value="<%=producto.image %>" enctype="multipart/form-data">

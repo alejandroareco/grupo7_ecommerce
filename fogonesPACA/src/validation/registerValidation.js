@@ -1,6 +1,31 @@
 const fs = require('fs');//requiero fs para poder buscar si el usuario esta registrado//
 const path = require ('path')
 const {check, validationResult, body} = require('express-validator');//requiero validator a travez del destructuting//
+let db = require('../database/models');
+
+
+module.exports = [
+   check('email')
+      .isEmail()
+      .withMessage('Tenés que ingresar un email válido. Recorda usar @'),
+      
+   body('email')
+      .custom(async value => {
+           return db.User.findOne(
+               {
+                  where: {email: value}
+               })
+               .then(function(result) {
+                   if(result) {
+                     return Promise.reject('El usuario está registrado')
+                   }
+               })
+       }),
+   check('passw')
+       .isLength({min:8, max: 16})
+       .withMessage('La contraseña tiene que tener un mínimo de 8 caracteres y un máximo de 16')    
+]
+/*
 
 //esto lee el user.json para chequear validator //
 let usuarios =fs.readFileSync(path.join(__dirname, '../data/user.json'), 'utf8');
@@ -25,4 +50,4 @@ module.exports = [
  check('password')
     .isLength({min:8, max: 16})
     .withMessage('La contraseña tiene que tener un mínimo de 8 caracteres y un máximo de 16')
-]
+]*/

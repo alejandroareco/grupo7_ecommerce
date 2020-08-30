@@ -4,6 +4,13 @@ const {check, validationResult, body} = require('express-validator');//requiero 
 
 
 module.exports = [
-   check('password').isLength({min:8, max: 16}).withMessage('La contraseña tiene que tener un mínimo de 8 caracteres y un máximo de 16'),
-   check('email').isEmail().withMessage('Tenés que ingresar un email válido. Recorda usar @'),
+   check('passw')
+      .isLength({min:8, max: 16})
+      .withMessage('La contraseña tiene que tener un mínimo de 8 caracteres y un máximo de 16'),
+
+
+   check('email')
+      .isEmail()
+      .withMessage('Tenés que ingresar un email válido. Recorda usar @'),
 ]
+

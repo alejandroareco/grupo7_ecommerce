@@ -52,8 +52,6 @@ router.get('/testSequelize', function (req, res, next){
 
 
 router.get('/panelUser', loginController.panelUser )
-//     })
-//  });
   
 ////////////////////ESTO HACIA ROMPER EL REGISTRO, HABRIA QUE PROBARLO EN ROUTES/PRODUCTS ///////////////////////////
 

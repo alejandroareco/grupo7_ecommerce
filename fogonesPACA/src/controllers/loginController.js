@@ -5,9 +5,9 @@ const {check, validationResult, body} = require('express-validator');//validator
 let db = require('../database/models');
 
 
-let usuarios = fs.readFileSync(path.join(__dirname, '../data/user.json'), 'utf8');
+/*let usuarios = fs.readFileSync(path.join(__dirname, '../data/user.json'), 'utf8');
 usuarios = JSON.parse(usuarios); //VARIABLE PARA LEER LOS USUARIOS REGISTRADOS //
-
+*/
 
 const loginController = {
     //welcome:function(req, res){
@@ -22,38 +22,60 @@ const loginController = {
     login:function(req, res){
         res.render('login')
     },
+
+
+
     sesion: function(req, res) {  
         user = req.session.user      
         let errors = validationResult(req);
         if(errors.isEmpty()) {
-            for(let i = 0; i < usuarios.length; i++) {
-                if(usuarios[i].email == req.body.email && bcrypt.compareSync(req.body.password, usuarios[i].password)) {
-                    req.session.user = usuarios[i].email
-                    
-                    if(req.body.remember == "on") {
-                        res.cookie('userCookie', usuarios[i].email, {maxAge:60000 * 5})
-                    }
+            db.User.findOne({
+                where: {
+                    email: req.body.email
+                }
+            })
+            
+            .then(function(result) {                  
+                if (!bcrypt.compareSync(value, result.dataValues.passw)) { 
+                    return Promise.reject('La contraseña es incorrecta')
+                }
+              })
+            res.render('logueado');
+            
+        }
+    
+     /////////////////////////////////////////////////////////////////////////////esto lee desde el JSON///////////
+    
+            /*for(let i = 0; i < usuarios.length; i++) {
+            if(usuarios[i].email == req.body.email && bcrypt.compareSync(req.body.passw, usuarios[i].passw)) {
+                req.session.user = usuarios[i].email
+                
+                if(req.body.remember == "on") {
+                    res.cookie('userCookie', usuarios[i].email, {maxAge:60000 * 5})
+                }
 
-                    return res.render('logueado',{
-                        user:req.session.user
-                    });
+                return res.render('logueado',{
+                    user:req.session.user
+                });
+            }
+        }
+        return res.render('login', {
+            errors: {
+                email: {
+                    msg: 'Credenciales inválidas. Inserta un email y contraseña registrados'
                 }
             }
-            return res.render('login', {
-                errors: {
-                    email: {
-                        msg: 'Credenciales inválidas. Inserta un email y contraseña registrados'
-                    }
-                }
-            })
+        })
 
-        } else {
-            res.render('login', {
-                errors: errors.mapped(),
-                old: req.body
-            })
-        }
+    } else {
+        res.render('login', {
+            errors: errors.mapped(),
+            old: req.body
+        })
+    }*/
     },
+
+
     registro:function(req,res){
         res.render('registro')
     },
@@ -61,6 +83,8 @@ const loginController = {
     //funcionalidad para grabar SQL / tambien modifique el modelo para poder grabar (ramiro)
 
     registrado:function(req,res, next){
+        let errores = validationResult (req)
+        if (errores.isEmpty()) {
         db.User.create({
             firstname: req.body.firstname,
             lastname: req.body.lastname,
@@ -69,22 +93,20 @@ const loginController = {
             address: req.body.address,
             phone: req.body.phone,
             avatar: (req.files[0] == undefined) ? 'empty' : req.files[0].filename
-        });
-        res.render('registrado');
-
-        //silencie el grabado del JSON me daba errores con la validacion /////////////////////////////////////////////
-        /*
-
-        let errores = validationResult(req);
-            if(errores.isEmpty()) {
-            res.render('registrado', {
-                user:req.session.user
-            })
-            } else {
+        })
+        .then(function(result) {
+            console.log('se guardo el usuario')
+            res.render('registrado');
+        })
+        } else {
             res.render('registro', {
             unosErrores: errores.errors
             })
         }
+
+        //silencie el grabado del JSON me daba errores con la validacion /////////////////////////////////////////////
+        /*
+  
          
         let usuario = {
         firstname: req.body.name,
@@ -115,7 +137,7 @@ const loginController = {
     },
 
 
-    editado:function(req, res, next){
+    /*editado:function(req, res, next){ //necesito que ande session para esto//
         db.User.update({
             firstname: req.body.firstname,
             lastname: req.body.lastname,
@@ -133,7 +155,7 @@ const loginController = {
         .then(function(result) {
            return res.redirect('mi cuenta')
         })
-    },
+    },*/
 
 
     

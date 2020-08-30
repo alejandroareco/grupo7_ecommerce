@@ -17,11 +17,13 @@ module.exports = function (sequelize, dataTypes){
         },
         email: {
             type: dataTypes.STRING(100),
-            allowNull: true
+            allowNull: false,
+            unique: true
         },
         passw:  {
             type: dataTypes.STRING(100),
-            allowNull: true
+            allowNull: false,
+            unique: true
         },
         address:  {
             type: dataTypes.TEXT,

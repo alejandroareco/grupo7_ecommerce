@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
     <!----tipografias / link google --->
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/nosotros.css">
+    <link rel="stylesheet" href="/css/panel.css">
     <title>ADMIN</title>
 </head>
 <body>
@@ -16,7 +17,7 @@
         <%-include('./homeHeader.ejs')%>
       </header>
     
-<div class="container text-center text-md-left mt-5">
+<div class="container  text-md-left mt-5">
   
           <h1>Productos vigentes</h1>
             <table>
@@ -24,7 +25,7 @@
                 <th scope="col">Id</th>
                 <th scope="col">Nombre producto</th>
                 <th scope="col">Precio</th>
-                <th scope="col">STOCK</th>
+                <th scope="col">Stock</th>
                 <th scope="col">Desctripcion</th>
                 <th scope="col">eliminar</th>
               </tr>
@@ -42,7 +43,7 @@
                     </form>
                     <% } %> 
                 </tr>   
-            </table>
+            </table>  
 
 
      </div> 
