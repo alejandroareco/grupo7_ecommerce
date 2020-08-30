@@ -22,19 +22,4 @@ router.get('/nosotros', productosController.nosotros);
 router.get('/listadoProductos',productosController.listadoProductos); /*Listado de todos los productos cargados*/
 
 
-router.delete('/eliminar/:id',loggedUserMiddleware,productosController.eliminar);
-router.get('/eliminar/:id', loggedUserMiddleware,productosController.eliminarv)
-router.get('/eliminado', loggedUserMiddleware,productosController.eliminado);/*Borrar producto del json*/
-
-
-
-/*
-faltan agregar funcionalidad en productosController.js
-
-router.get('/products/:id',productosController.detalleDeProducto); Detalle de un producto determinado
-router.get('/products/:id/edit', productosController.editar); Formulario de edicion de productos
-router.put('products/:id',productosController.editado); Enviar producto editado a archivo json
-
-*/
-
 module.exports = router;
