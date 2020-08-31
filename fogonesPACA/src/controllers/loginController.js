@@ -35,11 +35,13 @@ const loginController = {
                 }
             })
             
-            .then(function(result) {                  
-                if (!bcrypt.compareSync(value, result.dataValues.passw)) { 
-                    return Promise.reject('La contraseña es incorrecta')
-                }
-              })
+            .then(function(result) {   
+                //console.log(result.passw)
+                //console.log(result.dataValues.passw)            
+               if (bcrypt.compareSync(result.passw, result.dataValues.passw)) { 
+                return Promise.reject('La contraseña es incorrecta')
+                }})
+              
             res.render('logueado');
             
         }
@@ -132,9 +134,9 @@ const loginController = {
     },
 
     
-    edit: function(req, res){
+    //edit: function(req, res){
        
-    },
+    //},
 
 
     /*editado:function(req, res, next){ //necesito que ande session para esto//
