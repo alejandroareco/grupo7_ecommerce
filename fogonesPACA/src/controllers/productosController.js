@@ -87,7 +87,7 @@ const indexController = {
                 id: req.params.id
             }
         })
-        res.redirect("/panelProducto")
+        res.redirect("../panelProducto")
         }
 
 }
