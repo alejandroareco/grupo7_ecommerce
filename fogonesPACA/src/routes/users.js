@@ -13,6 +13,7 @@ router.get('/',loginController.login);
 router.get('/logout',loginController.logout);
 router.post('/', sesionValidation, loginController.sesion);
 router.get('/miCuenta',loggeduserMiddleware,loginController.miCuenta);
+router.post('/miCuenta',loggeduserMiddleware,loginController.editado); //aun no anda// 
 //router.post('/',loginController.sesion);
 router.get('/registro',loginController.registro);
 //aca se chequea el mail y el password que llega a travez del form de registro//

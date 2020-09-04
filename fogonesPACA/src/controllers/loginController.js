@@ -26,25 +26,38 @@ const loginController = {
 
 
     sesion: function(req, res) {  
-        user = req.session.user      
         let errors = validationResult(req);
         if(errors.isEmpty()) {
             db.User.findOne({
-                where: {
-                    email: req.body.email
-                }
+                where: { email: req.body.email  }
             })
-            
             .then(function(result) {   
-                //console.log(result.passw)
-                //console.log(result.dataValues.passw)            
-               if (bcrypt.compareSync(result.passw, result.dataValues.passw)) { 
-                return Promise.reject('La contraseña es incorrecta')
-                }})
-              
-            res.render('logueado');
-            
-        }
+                //console.log(result.dataValues.passw)
+               // console.log(req.body.passw)  
+            console.log(bcrypt.compareSync(req.body.passw, result.dataValues.passw))          
+            if (bcrypt.compareSync(req.body.passw, result.dataValues.passw)) { 
+                req.session.user = result.dataValues.email
+
+                if(req.body.remember == "on") {
+                    res.cookie('userCookie', result.dataValues.email, {maxAge:60000 * 5})
+                }
+                return res.render('logueado',{
+                    user: req.session.user
+                })
+            }})
+            //res.render('login', {
+              //  errors: { email: {  msg: 'Credenciales inválidas. Inserta un email y contraseña registrados' } }
+            //})            
+
+        }else{                 
+            return console.log ('------------------------------------es cosa del diablo---------------------'),
+                res.render('login', {
+                errors: errors.mapped(),
+                old: req.body
+                })
+        } 
+    },
+    
     
      /////////////////////////////////////////////////////////////////////////////esto lee desde el JSON///////////
     
@@ -74,8 +87,9 @@ const loginController = {
             errors: errors.mapped(),
             old: req.body
         })
-    }*/
-    },
+    */    
+    
+    
 
 
     registro:function(req,res){
@@ -139,7 +153,7 @@ const loginController = {
     //},
 
 
-    /*editado:function(req, res, next){ //necesito que ande session para esto//
+    editado:function(req, res, next){ //necesito que ande session para esto//
         db.User.update({
             firstname: req.body.firstname,
             lastname: req.body.lastname,
@@ -151,13 +165,13 @@ const loginController = {
         },
         {
             where: {
-                id: req.params.id
+                email: req.params.email
             }
         })
         .then(function(result) {
-           return res.redirect('mi cuenta')
+           return res.redirect('miCuenta')
         })
-    },*/
+    },
 
 
     
@@ -172,14 +186,20 @@ const loginController = {
 
 
     miCuenta:function(req,res, next){
-        db.User.findOne({ where: { email: req.session.user } })
+        db.User.findOne(
+            { where: { email: req.session.user } }
+            )
         .then(function(result) {
-            //res.send(response)
+            //console.log(result)
+            
         return res.render('miCuenta',
-        {user:result});
+        {user: result} )
+            
+
     })
         
-        res.render('miCuenta')
+       .catch(console.error())
+        
     },
 
 

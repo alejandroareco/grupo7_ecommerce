@@ -20,7 +20,7 @@
   <%-include('./homeHeader.ejs')%>
 </header>
 <body>
-  <h1><%= user %></h1>
+  <h1><%=user.email %></h1>
   
         <div id="cuerpo" class="container d-flex flex-wrap">
 
@@ -28,17 +28,21 @@
             <div class="col-sm-4">
               <div class="card">
                 <div class="card-body"> 
-                  <img id="avatar" src="/img/user/avatar-1597004644253.png" alt="">
+                  <img id="avatar" src="/img/user/<%=user.avatar%> " alt="">
                   <form action=""   method="POST" enctype="multipart/form-data">
                     <h5 class="card-title">Mis datos</h5>
                     <p class="card-text">Nombre</p>
-                    <input type="text" name="name" value="<%=  %> ">
+                    <input type="text" name="firstname" value="<%= user.firstname  %> ">
+                    <p class="card-text">Apellido</p>
+                    <input type="text" name="firstname" value="<%= user.lastname  %> ">
+                    <p class="card-text">Password</p>
+                    <input type="text" name="firstname" value="<%= user.passw  %> ">
                     <p class="card-text">Mail</p>
-                    <input type="text" name="name" value="<%=  %> ">
+                    <input type="text" name="name" value="<%= user.email %> ">
                     <p class="card-text">Dirección</p>
-                    <input type="text" name="name" value="<%=  %> ">
+                    <input type="text" name="name" value="<%= user.address %> ">
                     <p class="card-text">Telefono</p>
-                    <input type="text" name="name" value="<%=  %> ">
+                    <input type="text" name="name" value="<%= user.phone %> ">
                     <a href="#" class="btn btn-secondary">Editar datos</a>
                   </form>
               </div>
