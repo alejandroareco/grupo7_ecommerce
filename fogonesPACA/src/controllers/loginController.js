@@ -3,6 +3,7 @@ const path = require('path');
 const bcrypt = require ('bcryptjs');
 const {check, validationResult, body} = require('express-validator');//validator//
 let db = require('../database/models');
+const { Console } = require('console');
 
 
 /*let usuarios = fs.readFileSync(path.join(__dirname, '../data/user.json'), 'utf8');
@@ -44,14 +45,15 @@ const loginController = {
                 return res.render('logueado',{
                     user: req.session.user
                 })
+                
+                }else{(res.render('login', {
+                     errors: { email: {  msg: 'Credenciales inválidas. Inserta un email y contraseña registrados' } }
+                    }))
             }})
-            //res.render('login', {
-              //  errors: { email: {  msg: 'Credenciales inválidas. Inserta un email y contraseña registrados' } }
-            //})            
+                       
 
         }else{                 
-            return console.log ('------------------------------------es cosa del diablo---------------------'),
-                res.render('login', {
+            return res.render('login', {
                 errors: errors.mapped(),
                 old: req.body
                 })
@@ -153,23 +155,21 @@ const loginController = {
     //},
 
 
-    editado:function(req, res, next){ //necesito que ande session para esto//
+    miCuentaEditado:function(req, res){ //necesito que ande session para esto//
         db.User.update({
             firstname: req.body.firstname,
             lastname: req.body.lastname,
             email: req.body.email,
-            passw: bcrypt.hashSync(req.body.passw,12),
+            //passw: bcrypt.hashSync(req.body.passw,12),
             address: req.body.address,
-            phone: req.body.phone,
-            avatar: (req.files[0] == undefined) ? 'empty' : req.files[0].filename
+            phone: req.body.phone
+           
         },
         {
-            where: {
-                email: req.params.email
-            }
+            where: { email: req.session.user }
         })
-        .then(function(result) {
-           return res.redirect('miCuenta')
+        .then(function() {
+           return res.redirect('/login/miCuenta')
         })
     },
 
@@ -185,7 +185,7 @@ const loginController = {
     },
 
 
-    miCuenta:function(req,res, next){
+    miCuenta:function(req,res){
         db.User.findOne(
             { where: { email: req.session.user } }
             )

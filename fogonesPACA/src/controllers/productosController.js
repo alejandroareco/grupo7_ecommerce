@@ -77,7 +77,7 @@ const indexController = {
             }
         })
         .then(function(result) {
-           return res.redirect('/edit/'+req.params.id)
+           return res.redirect('/productos/edit/'+req.params.id)
         })
     },
     
