@@ -90,11 +90,7 @@ const loginController = {
             old: req.body
         })
     */    
-    
-    
-
-
-    registro:function(req,res){
+        registro:function(req,res){
         res.render('registro')
     },
 
