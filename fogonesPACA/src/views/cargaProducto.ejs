@@ -79,20 +79,22 @@
           <br>
           <div class="col-12 col-md-6">
            
-                <div class="form-group">
+                <div  class="form-group">
                   <label for="exampleFormControlInput1">Nombre del producto:</label>
-                  <input type="text" name="name" class="form-control" id="exampleFormControlInput1" placeholder="Producto" >
+                  <input id="nombre" type="text" name="name" class="form-control" id="exampleFormControlInput1" placeholder="Producto" >
+                  <small class="text-alert" id="errorNombre"></small>
                 </div>
         
-                <div id="precio" class="input-group mb-3">
+                <div class="input-group mb-3">
                     <div class="input-group-prepend">
                       <span class="input-group-text">$</span>
                     </div>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)" name="price">
+                    <input id="precio" type="number" class="form-control" aria-label="Amount (to the nearest dollar)" name="price">
                     <div class="input-group-append">
                       <span class="input-group-text">.00</span>
                     </div>
                   </div>
+                  <small class="text-alert" id="errorPrecio"></small>
         
                 <div id="stock" class="form-group">
                   <label for="exampleFormControlSelect1">Cantidad en stock:</label>
@@ -106,7 +108,8 @@
                 </div>
                 <div class="form-group">
                   <label for="exampleFormControlTextarea1">Descripción del producto:</label>
-                  <textarea name="description" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                  <textarea id="detalles" name="description" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                  <small id="detalles" class="text-alert"></small>
                   <br>
                   <button id="botonMobile" type="submit" class="btn btn-secondary btn-lg btn-block">Cargar producto</button>
                 </div>
@@ -122,5 +125,6 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script src="../js/js-front.js"></script>
 </body>
 </html>
