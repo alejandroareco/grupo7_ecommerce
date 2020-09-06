@@ -5,13 +5,13 @@ function qs(elemento) {
 window.addEventListener('load', function(){
     let campoNombre = qs('input#nombre');
     let campoPrecio = qs('input#precio');
-    let campoStock = qs('div#stock');
     let campoDetalles = qs('textarea#detalles');
-    let boton = qs('button#botonMobile');
+    let formulario = qs('form');
 
     let errorNombre = qs('small#errorNombre');
     let errorPrecio = qs('small#errorPrecio');
     let errorDetalles = qs('small#detalles');
+    let errores = {};
     
   campoNombre.addEventListener('blur', function(){
       if(campoNombre.value.length < 5){
@@ -24,27 +24,25 @@ window.addEventListener('load', function(){
       errorPrecio.innerText = 'Debe indicar un precio para este producto'
     }else errorPrecio.innerHTML = '';
   });
-    
-  campoStock.addEventListener('click', function(event){
-    
-  });
 
-  campoDetalles.addEventListener('blur', function(event){
+  campoDetalles.addEventListener('input', function(event){
     if(campoDetalles.value.length < 20){
-      qs('small#detalles').innerText = 'El campo debe tener al menos 20 caracteres!'
+      qs('small#detalles').innerText = 'El campo debe tener al menos 20 caracteres!';
+      console.log(errores)
     }else errorDetalles.innerHTML = '';
+
+    
   });
 
-
-/*
-  boton.addEventListener('submit', function (event) {
-        // si el campo de correo electrónico es válido, dejamos que el formulario se envíe
-         if(true) {
-          // Si no es así, mostramos un mensaje de error apropiado
-          showError(errorDetalles + errorPrecio + errorNombre);
-          // Luego evitamos que se envíe el formulario cancelando el evento
-          event.preventDefault();
-        }
-      });      */
+  formulario.addEventListener('submit', function (event) {
+    event.preventDefault();
+    if(0){ /*CONDICION DE ERRORES*/
+      alert('Hay errores en el formulario de carga del producto')
+      /*showError();*/
+    }else {
+      formulario.submit();
+      
+    } 
+      });      
 })
 
