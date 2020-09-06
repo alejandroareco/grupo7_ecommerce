@@ -72,7 +72,7 @@
                           document.getElementById("exampleFile3").disabled = false;
                           }
                           </script>
-                      <input type="file" class="form-control-file" onclick="enable1()" disabled="true" id="exampleFile3" name="image2" value="<%=producto.image %>" enctype="multipart/form-data">
+                      <input type="file" class="form-control-file" onclick="enable1()" disabled="true" id="exampleFile3" name="image2" value="<%=producto.image2 %>" enctype="multipart/form-data">
                       </div>
                   <!--elimine el form (estaba cagando la carga ahora es un gran form) -->
                  </div>
@@ -96,7 +96,7 @@
         
                 <div id="stock" class="form-group">
                   <label for="exampleFormControlSelect1">Cantidad en stock:</label>
-                  <select class="form-control" id="exampleFormControlSelect1" name="stock" value="<%=producto.stock %>">
+                  <select class="form-control" id="exampleFormControlSelect1" selected name="stock" value="<%=producto.stock %>" selected>
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>

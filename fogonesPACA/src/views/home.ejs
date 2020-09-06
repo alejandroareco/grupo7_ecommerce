@@ -5,14 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!----boostrap link --->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/home.css">
-    
-    <!----ICONO / FONT AWESOME --->
+            <!----ICONO / FONT AWESOME --->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-
     <!----tipografias / link google --->
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Scheherazade:wght@400;700&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="css/home.css">
 
     <title>HOME</title>
 </head>
@@ -21,15 +18,8 @@
 </header>
 <br>
 <body> 
-  <ul class="list-group list-group-horizontal-md">
-    <%  if(!user) { %>
-      <li class="list-group-item"><a href="/login" style= "color:black;">INICIAR SESIÓN</a></li>
-      <li class="list-group-item"><a href="/login/registro" style= "color:black;">REGISTRATE</a></li>
-      <% } else { %> 
-      <li class="list-group-item"><a href="/login/logout" style="color:black">CERRAR SESIÓN</a></li>
-      <% } %>
-  </ul>
-  <br>
+  
+  
   <div id="carouse" id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">

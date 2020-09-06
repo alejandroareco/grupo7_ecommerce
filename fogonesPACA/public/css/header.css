@@ -21,7 +21,13 @@ header div {
     justify-content: space-between
 }
 
-
+li .inicio {
+        display: inline;
+        text-align: center;
+      
+        color:black;
+    
+}
 
 header div div.logo1{
     height: 120px;
