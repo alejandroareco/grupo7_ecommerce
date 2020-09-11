@@ -18,6 +18,17 @@
 </header>
 <br>
 <body> 
+
+  <div class="usuario">
+    <img src="/public/img/user/avatar-1598656205498.jpg %>" alt="">
+    <ul class="list-group list-group-horizontal-md">
+        <%  if(!user) { %>
+          <li ><a class="inicio" href="/login" >INICIAR SESIÓN</a></li>
+               <% } else { %> 
+          <li class="list-group-item"><a class="inicio" href="/login/logout" >CERRAR SESIÓN</a></li>
+          <% } %>
+      </ul>
+</div>
   
   
   <div id="carouse" id="carouselExampleControls" class="carousel slide" data-ride="carousel">

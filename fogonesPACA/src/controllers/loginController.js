@@ -33,7 +33,7 @@ const loginController = {
                 where: { email: req.body.email  }
             })
             .then(function(result) {   
-                //console.log(result.dataValues.passw)
+                console.log(result)
                // console.log(req.body.passw)  
             console.log(bcrypt.compareSync(req.body.passw, result.dataValues.passw))          
             if (bcrypt.compareSync(req.body.passw, result.dataValues.passw)) { 
