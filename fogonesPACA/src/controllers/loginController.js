@@ -32,23 +32,29 @@ const loginController = {
             db.User.findOne({
                 where: { email: req.body.email  }
             })
-            .then(function(result) {   
-                console.log(result)
+            
+            .then(function(result) {  
+            if (result == null) {
+                return res.render('login', {
+                    errors: { email: {  msg: 'Credenciales inválidas. Inserta un email y contraseña registrados' } }
+                   })}
+                //console.log(result)
                // console.log(req.body.passw)  
             console.log(bcrypt.compareSync(req.body.passw, result.dataValues.passw))          
             if (bcrypt.compareSync(req.body.passw, result.dataValues.passw)) { 
                 req.session.user = result.dataValues.email
 
+               
                 if(req.body.remember == "on") {
                     res.cookie('userCookie', result.dataValues.email, {maxAge:60000 * 5})
                 }
-                return res.render('logueado',{
-                    user: req.session.user
+                    return res.render('logueado',{
+                        user: req.session.user
                 })
                 
-                }else{(res.render('login', {
-                     errors: { email: {  msg: 'Credenciales inválidas. Inserta un email y contraseña registrados' } }
-                    }))
+                
+                
+                .catch(console.error())    
             }})
                        
 
@@ -57,7 +63,8 @@ const loginController = {
                 errors: errors.mapped(),
                 old: req.body
                 })
-        } 
+        }
+
     },
     
     
@@ -152,20 +159,23 @@ const loginController = {
 
 
     miCuentaEditado:function(req, res){ //necesito que ande session para esto//
+        return res.send(req.body)
         db.User.update({
             firstname: req.body.firstname,
             lastname: req.body.lastname,
             email: req.body.email,
             //passw: bcrypt.hashSync(req.body.passw,12),
             address: req.body.address,
-            phone: req.body.phone
-           
+            phone: req.body.phone,
+                       
         },
         {
             where: { email: req.session.user }
+            
         })
+       
         .then(function() {
-           return res.redirect('/login/miCuenta')
+            return res.redirect('miCuenta')
         })
     },
 
@@ -182,19 +192,22 @@ const loginController = {
 
 
     miCuenta:function(req,res){
-        db.User.findOne(
-            { where: { email: req.session.user } }
-            )
+        db.User.findOne({
+            where: {
+                email: req.session.user
+            }
+        })
         .then(function(result) {
             //console.log(result)
             
-        return res.render('miCuenta',
-        {user: result} )
-            
-
-    })
+            return res.render('miCuenta', {
+                user: result
+            })
+        })
         
-       .catch(console.error())
+       .catch(function(error) {
+            console.log(error)
+       })
         
     },
 
