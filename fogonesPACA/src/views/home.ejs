@@ -16,18 +16,21 @@
 <header>
   <%-include('./homeHeader.ejs')%>
 </header>
-<br>
-<body> 
+<body>
+  <div class="container text-center text-md-left mt-5">
+
 
   <div class="usuario">
-    <img src="/public/img/user/avatar-1598656205498.jpg %>" alt="">
+    
     <ul class="list-group list-group-horizontal-md">
-        <%  if(!user) { %>
-          <li ><a class="inicio" href="/login" >INICIAR SESIÓN</a></li>
-               <% } else { %> 
-          <li class="list-group-item"><a class="inicio" href="/login/logout" >CERRAR SESIÓN</a></li>
-          <% } %>
-      </ul>
+    <%  if(!user) { %>
+      <li class="list-group-item"><a href="/login" style= "color:black;">INICIAR SESIÓN</a></li>
+      <li class="list-group-item"><a href="/login/registro" style= "color:black;">REGISTRATE</a></li>
+      <% } else { %> 
+      <li class="list-group-item"><a href="/login/logout" style="color:black">CERRAR SESIÓN</a></li>
+      <% } %>
+  </ul>
+  <br>
 </div>
   
   
@@ -54,36 +57,35 @@
   </div>
     <img id="envio" src="/img/envios.png" alt="">
     <section>
-        <div class="container d-flex flex-wrap">
-          <form action="./productos/detalleProducto" method="GET">
-            <div class="row">
+        <div class="card-columns">  
+          <form action="/productos/ " method="GET">
+            
+            <% for (let i = 0; i < producto.length; i ++ ) { %>
+                <div class="card">
+                  <a href=""><img src="/img/fotosProductosNuevos/<%=producto[i].image %>" class="card-img-top" alt="..."></a>
+                    <div class="card-body">
+                      <h5 class="card-title"><%=producto[i].name %></h5>
+                        <p class="card-text"><%=producto[i].description %></p>
+                        <div class="card-footer">
+                          <small class="text-muted">$<%=" " + producto[i].price %></small>
+                          </div>
+                            <form id="form" action="/cart/add" method="post">
+                                <input type="hidden" value="" name="id_producto">
+                                <button class="btn btn-primary" type="submit">al carrito</button>
+                                
+                            </form>   
 
-              <% for (let i = 0; i < producto.length; i ++ ) { %>
-                <tr>                    
-               <article class="col-12 col-md-6 col-lg-3" class="a">
-                <img class="producto" src="img/DSC_0243.JPG" alt="">
-                <h4>$<td><%=producto[i].price %></td></h4>
-                <h3><td><%=producto[i].name %></td></h3>
-                <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Detalle</button>
-                <button type="submit" class="btn btn-info">comprar</button>
-                <div class="collapse" id="collapseExample">
-                  <div class="card card-body">
-                    <p>
-                    <ul>
-                      <li><td><%=producto[i].description %></td></li>
-                    </ul>
-                  </p>
-                  </div> 
+                           
+                    </div>
                 </div>
-              </article>
-              <% } %> 
-              </tr>             
-            </div>
-          </form>
-    </div>	
-  </section>     
- 
+            <% } %>
 
+
+          </form>
+        </div>	
+    </section>     
+ 
+  </div> 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>

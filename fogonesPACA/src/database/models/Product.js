@@ -22,8 +22,8 @@ module.exports = function (sequelize, dataTypes){
         description:  {
             type: dataTypes.STRING(100),
             allowNull: true
-        }, //agregue los campos imagenes para saber que nommre tienen//
-       /* image:  {
+        }, 
+        image:  {
             type: dataTypes.STRING(100),
             allowNull: false
         },
@@ -34,7 +34,7 @@ module.exports = function (sequelize, dataTypes){
         image2:  {
             type: dataTypes.STRING(100),
             allowNull: false
-        },*/
+        },
     }
     
     let config = {

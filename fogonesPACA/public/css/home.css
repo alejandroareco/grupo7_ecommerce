@@ -8,54 +8,11 @@ body {
     
 }
 
-/* ==================
-- HEADER
-================== */
-button{
-    color: red;
-}
-section {
-   
-        display: flex;
-        flex-wrap: wrap;    
-        background-color: white;
-        padding-top: 10px;
-    }
 
 
-article {
-   border-color: hotpink;
 
-}
+ 
 
-
-section div{
-    display: flex;
-    width: 100%;
-    padding: 0%;
-    justify-content: center;
-    
-}
-
-article img.producto {
-    width: 100%;
-}   
-
-h4{
-    margin: 0;
-    color: gray;
-    text-transform: inherit;
-    background-color: lightgray;
-    text-align: left;
-    padding-left: 10px;
-
-}
-
-article p{
-    font-size: x-small;
-    margin: 0;
-    width: 100%;
-}
 
 ul {
     justify-content: center;
@@ -79,7 +36,7 @@ li{
   margin-left: auto;
   margin-right: auto;
   text-align: center; 
-  width: 80%;
+ 
 }
 #envio{
     margin-left: 10%;

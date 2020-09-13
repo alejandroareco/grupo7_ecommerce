@@ -7,7 +7,7 @@ const loggedUserMiddleware = require ('../middleware/loggedUser')
 
 router.get('/cargaProducto',loggedUserMiddleware,productosController.cargaProducto);/*Formulario de carga de producto*/
 /* agregue funcionalidad para multer a la ruta upload.any() */
-router.post('/cargaProducto',loggedUserMiddleware, multerCargaProducto.any(), productosController.cargarProducto); /*(enviar producto agreado a archivo json)*/
+router.post('/cargaProducto', multerCargaProducto.any(), loggedUserMiddleware, productosController.cargarProducto); /*(enviar producto agreado a archivo json)*/
 
 
 router.get('/panelProducto', productosController.panelProducto )

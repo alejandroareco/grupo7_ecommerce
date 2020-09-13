@@ -22,6 +22,7 @@ const indexController = {
     },
 
     cargarProducto:function(req, res, next){
+        
         db.Product.create({
             name: req.body.name,
             description: req.body.description,
