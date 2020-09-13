@@ -159,7 +159,7 @@ const loginController = {
 
 
     miCuentaEditado:function(req, res){ //necesito que ande session para esto//
-        return res.send(req.body)
+        
         db.User.update({
             firstname: req.body.firstname,
             lastname: req.body.lastname,

@@ -23,9 +23,9 @@ app.use(express.urlencoded({extended:false}));
 
 app.use(methodOverride("_method"));/*PUT Y DELETE*/
 app.use(session({
-    secret:'ESTE ES UN SECRETO'
-   // resave: false,
-   // saveUninitialized: true
+    secret:'ESTE ES UN SECRETO',
+    resave: false,
+    saveUninitialized: true
 })); /*SESSION*/
 
 app.use(cookieParser());
