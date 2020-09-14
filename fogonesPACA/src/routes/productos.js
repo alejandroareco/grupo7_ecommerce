@@ -19,6 +19,7 @@ router.get('/carrito',loggedUserMiddleware,productosController.carrito);
 router.post('/carrito',loggedUserMiddleware,productosController.productoAgregado);
 router.get('/detalleProducto/:id',productosController.detalleProducto);
 router.get('/nosotros', productosController.nosotros);
+router.get('/instructivo', productosController.instructivo);
 router.get('/listadoProductos',productosController.listadoProductos); /*Listado de todos los productos cargados*/
 
 

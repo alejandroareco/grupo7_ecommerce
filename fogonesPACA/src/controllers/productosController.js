@@ -45,6 +45,9 @@ const indexController = {
     },
     nosotros:function(req,res){
         res.render("nosotros")
+    },
+    instructivo:function(req,res){
+        res.render("instructivo")
     },    
     panelProducto: function(req, res, next){
         db.Product.findAll()
@@ -92,7 +95,7 @@ const indexController = {
             }
         })
         res.redirect("../panelProducto")
-        }
+        },
 
 }
 
