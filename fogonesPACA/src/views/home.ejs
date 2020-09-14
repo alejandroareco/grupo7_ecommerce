@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <!----tipografias / link google --->
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Scheherazade:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="/css/home.css">
 
     <title>HOME</title>
 </head>
@@ -62,7 +62,7 @@
             
             <% for (let i = 0; i < producto.length; i ++ ) { %>
                 <div class="card">
-                  <a href=""><img src="/img/fotosProductosNuevos/<%=producto[i].image %>" class="card-img-top" alt="..."></a>
+                  <a href="/productos/detalleProducto/<%=producto[i].id %>"><img src="/img/fotosProductosNuevos/<%=producto[i].image %>" class="card-img-top" alt="..."></a>
                     <div class="card-body">
                       <h5 class="card-title"><%=producto[i].name %></h5>
                         <p class="card-text"><%=producto[i].description %></p>

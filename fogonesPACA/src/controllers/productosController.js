@@ -11,7 +11,10 @@ const indexController = {
         /*Agregar producto al carrito*/        
     },
     detalleProducto:function(req, res){
-        res.render('detalleProducto')
+            db.Product.findByPk(req.params.id)
+                .then(function(result) {
+                    return res.render('detalleProducto', {producto:result})
+            })
     },
     home:function(req, res){
         res.render('home')
