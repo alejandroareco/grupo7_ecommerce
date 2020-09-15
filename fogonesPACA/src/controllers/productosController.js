@@ -51,6 +51,9 @@ const indexController = {
     nosotros:function(req,res){
         res.render("nosotros", {user:req.session.user})
     },
+    contacto:function(req,res){
+        res.render("contacto", {user:req.session.user})
+    },
     instructivo:function(req,res){
         res.render("instructivo", {user:req.session.user})
     },    
