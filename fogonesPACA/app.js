@@ -25,7 +25,8 @@ app.use(methodOverride("_method"));/*PUT Y DELETE*/
 app.use(session({
     secret:'ESTE ES UN SECRETO',
     resave: false,
-    saveUninitialized: true
+    saveUninitialized: true,
+    user: session.user
 })); /*SESSION*/
 
 app.use(cookieParser());

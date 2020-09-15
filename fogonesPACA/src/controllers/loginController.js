@@ -36,7 +36,8 @@ const loginController = {
             .then(function(result) {  
             if (result == null) {
                 return res.render('login', {
-                    errors: { email: {  msg: 'Credenciales inválidas. Inserta un email y contraseña registrados' } }
+                    errors: { email: {  msg: 'Credenciales inválidas. Inserta un email y contraseña registrados' } },
+                    user: req.session.user
                    })}
                 //console.log(result)
                // console.log(req.body.passw)  
@@ -51,20 +52,14 @@ const loginController = {
                     return res.render('logueado',{
                         user: req.session.user
                 })
-                
-                
-                
-                .catch(console.error())    
             }})
                        
-
         }else{                 
             return res.render('login', {
                 errors: errors.mapped(),
                 old: req.body
                 })
         }
-
     },
     
     

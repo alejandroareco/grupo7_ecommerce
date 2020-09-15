@@ -11,9 +11,19 @@
 <body>
     <header>
         <div class="container-fluid">
-            <div class="logo1"><img src="/img/LOGOSIMPLE PNG.png" href="/home" alt=""> </div>
-            <div class="logo2"><img src="/img/logo.png" href="/home" alt=""> </div>
-            
+            <div class="logo1"><a href="/home"><img src="/img/LOGOSIMPLE PNG.png"  alt=""></a> </div>
+            <div class="logo2"><a href="/home"><img src="/img/logo.png" alt=""> </a></div>
+            <div class="usuario">
+    
+                <ul class="list-group list-group-horizontal-md">
+                <%  if(!user) { %>
+                  <li class="list-group-item"><a href="/login" style= "color:black;">INICIAR SESIÓN</a></li>
+                  <% } else { %> 
+                  <li class="list-group-item"><a href="/login/logout" style="color:black">CERRAR SESIÓN</a></li>
+                  <% } %>
+              </ul>
+              
+              </div>
         </div>
         
         <div class="barra-nav">

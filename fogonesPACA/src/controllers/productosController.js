@@ -3,9 +3,11 @@ const path = require('path');
 const db = require('../database/models');
 //const { delete } = require('../routes/productos');
 
+
 const indexController = {
+    
     carrito:function(req, res){
-        res.render('carrito')
+        res.render('carrito', {user:req.session.user})
     },
     productoAgregado:function(req,res){
         /*Agregar producto al carrito*/        
@@ -13,15 +15,18 @@ const indexController = {
     detalleProducto:function(req, res){
             db.Product.findByPk(req.params.id)
                 .then(function(result) {
-                    return res.render('detalleProducto', {producto:result})
+                    return res.render('detalleProducto', {
+                        producto:result,
+                        user:req.session.user
+                    })
             })
     },
     home:function(req, res){
-        res.render('home')
+        res.render('home', {user:req.session.user})
     },
 
     cargaProducto:function(req, res){
-        res.render('cargaProducto')
+        res.render('cargaProducto', {user:req.session.user})
     },
 
     cargarProducto:function(req, res, next){
@@ -37,23 +42,26 @@ const indexController = {
             price: req.body.price,
 
         });
-        res.render('productoCargado');
+        res.render('productoCargado', {user:req.session.user});
       
     },
     listadoProductos:function(req, res){
-        res.render('listadoDeProductos')
+        res.render('listadoDeProductos', {user:req.session.user})
     },
     nosotros:function(req,res){
-        res.render("nosotros")
+        res.render("nosotros", {user:req.session.user})
     },
     instructivo:function(req,res){
-        res.render("instructivo")
+        res.render("instructivo", {user:req.session.user})
     },    
     panelProducto: function(req, res, next){
         db.Product.findAll()
             .then(function(result) {
-            return res.render('panelProducto',
-            {producto:result});
+            return res.render('panelProducto', {
+                producto:result,
+                user:req.session.user
+            }, 
+            )
         })
     },
 
@@ -61,8 +69,9 @@ const indexController = {
     edit: function(req, res){
         db.Product.findByPk(req.params.id)
             .then(function(result) {
-            return res.render('editProducto',
-            {producto:result});
+            return res.render('editProducto', {
+                producto:result,
+                user:req.session.user});
         })
     },
 
@@ -94,7 +103,7 @@ const indexController = {
                 id: req.params.id
             }
         })
-        res.redirect("../panelProducto")
+        res.redirect("../panelProducto", {user:req.session.user})
         },
 
 }
