@@ -1,3 +1,4 @@
+
 h2 {
     text-align: center;
 }
@@ -19,3 +20,12 @@ p {
     cursor: pointer;
     font-size: 20px;
   }
+
+  li {
+      margin-left: 5px;
+}
+
+.card-body{
+    font-family: 'Tinos', serif;
+
+}
