@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/ee42bcc560.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/instructivo.css">
     <title>INSTRUCTIVO</title>
 </head>
@@ -10,42 +12,58 @@
     <%-include('./homeHeader.ejs')%>
 </header>
 <body>
-    
-    <h2>Modo de Uso</h2>
-    
-    <ol>
-        <li>1- Verter el bioetanol por la ranura, preferentemente con un embudo para no derramar fuera del fogón.</li>
-        <li>2- Encender con cualquier chispero o encendedor</li>
-        <li>3- Apagar el mismo únicamente con la tapa NO SOPLAR</li>
-    </ol> 
-    
-    <h2>Manual de Seguridad</h2>
-    <h4>¿Qué debemos tener en cuenta al utilizar alguno de los modelos PACA?</h4>
-    <p>Como cualquier objeto que genera fuego debemos tomar ciertas precauciones para un correcto uso del mismo y evitar cualquier accidente.</p>
-    
-    <ol>
-        <li>- No se debe recargar con bioetanol mientras el fogón esté prendido. Esperar a que se apague, dejar enfriar y volver a cargar para su posterior encendido.</li>
-        <li>- Si bien puede utilizarse en un interior, el ambiente debe estar ventilado.</li>
-        <li>- No dejar a la intemperie, una vez utilizado en exterior, debe quedar resguardado.</li>
-        <li>- Al ser objetos livianos y trasladables debemos tener en cuenta el hecho de no moverlo mientras el fogón esté encendido.</li>
-        <li>- Colocarlo sobre una superficie estable para evitar el vuelco del mismo.</li>
-        <li>- Mantener alejado de elementos inflamables.</li>
-    </ol>
-    
-    <h2>Para tener en Cuenta</h2>
-    <ol>
-        <li>- No necesitan instalación</li> 
-        <li>- Transportables y livianos</li>
-        <li>- Calientan por convección.</li>
-        <li>- No necesitan mantenimiento. Pero se debe resguardar de la intemperie luego de ser utilizado.</li>
-        <li>- Si se derrama bioetanol se debe limpiar la superficie para evitar cualquier accidente.</li>
-        <li>- Para apagarlo utilizar solamente la tapa metálica para generar el vacío de aire.</li>
-        <li>- Se recomienda dejar el fogón tapado cuando esté en desuso para evitar la entrada de cualquier residuo o agente externo.</li>
-        <li>- Si se coloca en un hogar se recomienda anular el tiraje para que todo el calor se dirija directamente hacia el ambiente.</li> 
-        <li>- Utilizalos en cualquier lugar: galerías, balcones, decks, terrazas, patios, jardines.</li> 
-        <li>- No rayan ni calientan las superficies</li>
-    </ol>
-    
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">MODO DE USO</h4>
+                    <ol class="card-text">
+                        <li> Verter el bioetanol por la ranura, preferentemente con un embudo para no derramar fuera del fogón.</li>
+                        <li> Encender con cualquier chispero o encendedor</li>
+                        <li> Apagar el mismo únicamente con la tapa NO SOPLAR</li>    
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">MANUAL DE SEGURIDAD</h4>
+                    <p>¿Qué debemos tener en cuenta al utilizar alguno de los modelos PACA?</p>
+                    <p>Como cualquier objeto que genera fuego debemos tomar ciertas precauciones para un correcto uso del mismo y evitar cualquier accidente.</p>
+                    <ul class="card-text">
+                        <li> No se debe recargar con bioetanol mientras el fogón esté prendido. Esperar a que se apague, dejar enfriar y volver a cargar para su posterior encendido.</li>
+                        <li> Si bien puede utilizarse en un interior, el ambiente debe estar ventilado.</li>
+                        <li> No dejar a la intemperie, una vez utilizado en exterior, debe quedar resguardado.</li>
+                        <li> Al ser objetos livianos y trasladables debemos tener en cuenta el hecho de no moverlo mientras el fogón esté encendido.</li>
+                        <li> Colocarlo sobre una superficie estable para evitar el vuelco del mismo.</li>
+                        <li> Mantener alejado de elementos inflamables.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">PARA TENER EN CUENTA</h4>
+                    <ul class="card-text">
+                        <li> No necesitan instalación</li> 
+                        <li> Transportables y livianos</li>
+                        <li> Calientan por convección.</li>
+                        <li> No necesitan mantenimiento. Pero se debe resguardar de la intemperie luego de ser utilizado.</li>
+                        <li> Si se derrama bioetanol se debe limpiar la superficie para evitar cualquier accidente.</li>
+                        <li> Para apagarlo utilizar solamente la tapa metálica para generar el vacío de aire.</li>
+                        <li> Se recomienda dejar el fogón tapado cuando esté en desuso para evitar la entrada de cualquier residuo o agente externo.</li>
+                        <li> Si se coloca en un hogar se recomienda anular el tiraje para que todo el calor se dirija directamente hacia el ambiente.</li> 
+                        <li> Utilizalos en cualquier lugar: galerías, balcones, decks, terrazas, patios, jardines.</li> 
+                        <li> No rayan ni calientan las superficies</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <a href="/img/fotos instructivos/INSTRUCTIVO DE USO Y SEGURIDAD.docx" class="button" download><i class="fas fa-download"></i> Descargar instructivo</button>
 </body>
 </html>
 <footer>
