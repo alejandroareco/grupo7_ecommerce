@@ -3,9 +3,8 @@
     box-sizing: border-box;
     padding: 0px;
     }
-body{
-font-family: 'Roboto', Arial, Helvetica, sans-serif;
-
+body p{
+    font-family: 'Tinos', serif;
 }  
 section{
     background-image: url(https://d26lpennugtm8s.cloudfront.net/stores/001/219/030/themes/new_linkedman/slide-1596577319454-8466217579-0adba90074a984d4589562b7b5900bae1596577348-1920-1920.jpg?1382979783);
