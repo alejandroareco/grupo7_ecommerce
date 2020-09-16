@@ -93,7 +93,9 @@ const loginController = {
         })
     */    
         registro:function(req,res){
-        res.render('registro')
+        res.render('registro',{
+            user:req.session.user
+        });
     },
 
     //funcionalidad para grabar SQL / tambien modifique el modelo para poder grabar (ramiro)
