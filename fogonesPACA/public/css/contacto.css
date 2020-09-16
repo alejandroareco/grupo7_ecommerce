@@ -5,3 +5,16 @@
 #formu-contact{
     margin-top: 5%;
 }
+
+#icon{
+    display: inline-block;
+    margin-right: 20px; 
+    justify-content: center;
+}
+#icon a{
+    color: black;
+    size: 50px;
+}
+dl, ol, ul{
+    text-align: center;
+}
