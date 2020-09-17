@@ -106,7 +106,7 @@ const indexController = {
                 id: req.params.id
             }
         })
-        res.redirect("../panelProducto", {user:req.session.user})
+        res.redirect("../panelProducto",200, {user:req.session.user})
         },
 
 }
