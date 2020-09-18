@@ -2,18 +2,19 @@ const express = require ('express');
 const router = express.Router();
 const productosController = require('../controllers/productosController');
 const path = require('path');
-const multerCargaProducto = require ('../middleware/multerCargaProducto')
-const loggedUserMiddleware = require ('../middleware/loggedUser')
+const multerCargaProducto = require ('../middleware/multerCargaProducto');
+const loggedUserMiddleware = require ('../middleware/loggedUser');
+const admindMiddleware = require('../middleware/isAdmin');
 
 router.get('/cargaProducto',loggedUserMiddleware,productosController.cargaProducto);/*Formulario de carga de producto*/
 /* agregue funcionalidad para multer a la ruta upload.any() */
 router.post('/cargaProducto', multerCargaProducto.any(), loggedUserMiddleware, productosController.cargarProducto); /*(enviar producto agreado a archivo json)*/
 
 
-router.get('/panelProducto', productosController.panelProducto )
-router.get('/edit/:id', productosController.edit); //edita un producto//
-router.post('/edit/:id', multerCargaProducto.any(), productosController.editado);
-router.post('/borrado/:id',multerCargaProducto.any(), productosController.borrado);// borrado de SQL
+router.get('/panelProducto', admindMiddleware, productosController.panelProducto )
+router.get('/edit/:id', admindMiddleware, productosController.edit); //edita un producto//
+router.post('/edit/:id', multerCargaProducto.any(), admindMiddleware, productosController.editado);
+router.post('/borrado/:id',multerCargaProducto.any(), admindMiddleware, productosController.borrado);// borrado de SQL
 
 router.get('/carrito',loggedUserMiddleware,productosController.carrito);
 router.post('/carrito',loggedUserMiddleware,productosController.productoAgregado);

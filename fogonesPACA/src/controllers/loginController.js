@@ -35,30 +35,28 @@ const loginController = {
             
             .then(function(result) {  
             if (result == null) {
-                return res.render('login', {
+                res.render('login', {
                     errors: { email: {  msg: 'Credenciales inválidas. Inserta un email y contraseña registrados' } },
                     user: req.session.user
-                   })}
+                     })
+                    }
                 //console.log(result)
                // console.log(req.body.passw)  
             console.log(bcrypt.compareSync(req.body.passw, result.dataValues.passw))          
             if (bcrypt.compareSync(req.body.passw, result.dataValues.passw)) { 
-                req.session.user = result.dataValues.email
-
-               
+                req.session.user = result.dataValues.email 
+                              
                 if(req.body.remember == "on") {
                     res.cookie('userCookie', result.dataValues.email, {maxAge:60000 * 5})
                 }
-                    return res.render('logueado',{
-                        user: req.session.user
+                return res.render('logueado',{
+                    user: result
                 })
+            }else{
+                res.render('login')
+
             }})
                        
-        }else{                 
-            return res.render('login', {
-                errors: errors.mapped(),
-                old: req.body
-                })
         }
     },
     
@@ -110,7 +108,8 @@ const loginController = {
             passw: bcrypt.hashSync(req.body.passw,12),
             address: req.body.address,
             phone: req.body.phone,
-            avatar: (req.files[0] == undefined) ? 'empty' : req.files[0].filename
+            avatar: (req.files[0] == undefined) ? 'empty' : req.files[0].filename,
+            admin: 'usuario' 
         })
         .then(function(result) {
             console.log('se guardo el usuario')
@@ -178,14 +177,7 @@ const loginController = {
 
 
     
-    borrado:function(req, res, next){
-        db.User.destroy({
-                where: {
-                id: req.params.id
-            }
-        })
-        res.redirect("/panel")
-    },
+
 
 
     miCuenta:function(req,res){
@@ -215,13 +207,32 @@ const loginController = {
     },
 
 
-    panelUser: function (req, res, next){
+    panelUser: function (req, res){
         db.User.findAll()
         .then(function(response){
          //res.send(response)
         res.render('panelUsuario', {
-        usuario:response}
+        usuario:response,
+        user:req.session.user}
+
         )})
+    },
+
+    panelUserEdit: function (req, res){
+        db.User.update({
+        admin: req.body.admin                    
+    },
+    {
+        where: { email: req.body.email }
+        
+    })
+   
+    .then(function() {
+        return res.redirect('panelUsuario', {
+            usuario:response,
+            user:req.session.user}
+        )
+    })
     },
 
 };

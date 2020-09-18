@@ -16,7 +16,7 @@
             <div class="usuario">
     
                 <ul class="list-group list-group-horizontal-md">
-                <%  if(!user) { %>
+                <%  if(typeof user == "undefined") { %>
                   <li class="list-group-item"><a href="/login" style= "color:black;">INICIAR SESIÓN</a></li>
                   <% } else { %> 
                   <li class="list-group-item"><a href="/login/logout" style="color:black">CERRAR SESIÓN</a></li>

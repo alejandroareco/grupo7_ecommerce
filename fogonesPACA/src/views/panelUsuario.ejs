@@ -28,7 +28,9 @@
                
                 <th scope="col">direccion</th>
                 <th scope="col">Tel.</th>
+                <th scope="col">funcion</th>
                 <th scope="col">Borrar</th>
+                <th scope="col">editar</th>
               </tr>
               
                 <% for (let i = 0; i < usuario.length; i ++ ) { %>
@@ -41,13 +43,25 @@
                     
                     <td><%=usuario[i].address %></td>
                     <td><%=usuario[i].phone %></td>
-
-                    <form action="/usuario/borrado/<%=usuario[i].id %>" method="POST">
-                      <td><input value="borrar" type="submit" ></td>
+                    <td><select id="tipo de usuario" name="admin">
+                      <% if (usuario[i].admin == "usuario") { %>
+                        <option selected><%= usuario[i].admin %> </option>
+                        <option value="usuario">usuario</option>
+                        <option value="admin">admin</option>
+                    <% } %>
+                    <% if (usuario[i].admin == "admin") { %>
+                        <option selected><%= usuario[i].admin %> </option>
+                        <option value="admin">admin</option>
+                        <option value="admin">usuario</option>
+                        <% } %>
+                                                             
+                    <form action="/login/panelUserEdit/:<%=usuario[i].id %>" method="POST">
+                      <td><input value="Edit" type="submit" ></td>
                     </form>
                     <% } %> 
+
                 </tr>   
-            </table>  
+            </table>    
             
             
 

@@ -1,4 +1,3 @@
-const fs = require('fs');//requiero fs para poder buscar si el usuario esta registrado//
 const path = require ('path');
 const {check, validationResult, body} = require('express-validator');//requiero validator a travez del destructuting//
 

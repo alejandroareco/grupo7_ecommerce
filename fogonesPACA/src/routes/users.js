@@ -5,7 +5,7 @@ const sesionValidation = require('../validation/sesionValidation');
 const registerValidation = require ('../validation/registerValidation'); //registerValidation funcionalidad de validator //
 const multerRegister = require('../middleware/multerRegister'); //modularice multer al middleware //
 const loggeduserMiddleware = require('../middleware/loggedUser');
-
+const admindMiddleware = require('../middleware/isAdmin');
 
 //router.get('/',loginController.welcome);
 //router.get('/home',loginController.home);
@@ -18,7 +18,8 @@ router.post('/miCuenta',loginController.miCuentaEditado); //aun no anda//
 router.get('/registro',loginController.registro);
 //aca se chequea el mail y el password que llega a travez del form de registro//
 router.post('/registro',multerRegister.any(), registerValidation, loginController.registrado); //modularice register a la carpeta de registerValidation//
-router.get('/panelUsuario', loginController.panelUser )
+router.get('/panelUsuario', admindMiddleware, loginController.panelUser );
+router.post('/panelUsuario/', admindMiddleware, loginController.panelUserEdit )
 
 ////////////////////RUTA DE PRUEBA PARA FUNCIONAMIENTO DE SEQUELIZE///////////////////////////
 
@@ -52,7 +53,8 @@ router.get('/testSequelize', function (req, res, next){
 ////////////////////ESTO HACIA ROMPER EL REGISTRO, HABRIA QUE PROBARLO EN ROUTES/PRODUCTS ///////////////////////////
 
 
-router.get('/panelUser', loginController.panelUser )
+
+
   
 ////////////////////ESTO HACIA ROMPER EL REGISTRO, HABRIA QUE PROBARLO EN ROUTES/PRODUCTS ///////////////////////////
 

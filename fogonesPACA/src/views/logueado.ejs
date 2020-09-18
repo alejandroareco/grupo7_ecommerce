@@ -12,7 +12,7 @@
 <body>
   <div class="container">
     <h2>Gracias por Iniciar Sesión en Fogones Paca</h2>
-    <p style="color: blue;">Bienvenido <%= user %> </p>
+    <p style="color: blue;">Bienvenido <%= user.email %> </p>
   </div>
   <img src="/img/DSC_0052.JPG" class="rounded mx-auto d-block"  width="315" height="210" alt="welcome">
 </body>
@@ -21,7 +21,11 @@
   <li class="nav-item">
     <a class="nav-link active" href="/home">Comenzar a Comprar</a>
     <li><a class="nav-link active" href="login/miCuenta">Mi cuenta</a></li> 
-    <li><a class="nav-link active" href="/productos/panelProducto">admin</a></li> 
+   
+    <% if (user.admin == "admin") {  %>
+    <li><a class="nav-link active" href="/productos/panelProducto">admin</a></li> %> 
+    <% }   %>
+
   </ul>
   <br>
   <footer>
