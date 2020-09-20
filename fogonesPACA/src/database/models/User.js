@@ -39,7 +39,7 @@ module.exports = function (sequelize, dataTypes){
         },
         admin: {
             type: dataTypes.STRING(100),
-            allowNull: true
+            allowNull: false
         },
     }
     

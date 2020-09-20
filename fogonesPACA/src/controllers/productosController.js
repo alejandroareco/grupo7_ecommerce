@@ -106,14 +106,10 @@ const indexController = {
                 id: req.params.id
             }
         })
-<<<<<<< HEAD
         res.redirect('../panelProducto', 200, {
             user: req.session.user
         })
 
-=======
-        res.redirect("../panelProducto",200, {user:req.session.user})
->>>>>>> fcf9894aa4ec0fb39e038615c81917599a023233
         },
 
 }
