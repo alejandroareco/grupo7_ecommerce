@@ -31,8 +31,9 @@ CREATE TABLE `users` (
   `address` text DEFAULT NULL,
   `phone` varchar(100) DEFAULT NULL,
   `avatar` char(50) DEFAULT NULL,
+  `admin` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +42,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'pato','pato','pato@paka.com','$2a$12$0t3ISzrxsUiWlpOZuXGpDuY855XUhw6Prjzrtl.7/.ho2o.YhF1iq',NULL,NULL,'empty'),(2,'ramiro','martinez  ','ramaniac@hotmail.com  ','$2a$12$YX31hO2hMzH/NQwANyDFTOcYlEvF1gFXpgeS6DGuGs5H1tytlE/U2','las magnolis 2020','11-245-1231','avatar-1599863501913.jpg');
+INSERT INTO `users` VALUES (1,'pato','pato','pato@paka.com','$2a$12$0t3ISzrxsUiWlpOZuXGpDuY855XUhw6Prjzrtl.7/.ho2o.YhF1iq',NULL,NULL,'empty','usuario'),(2,'ramiro  ','martinez    ','ramaniac@hotmail.com    ','$2a$12$YX31hO2hMzH/NQwANyDFTOcYlEvF1gFXpgeS6DGuGs5H1tytlE/U2','las 12132132132','11-245-1231  ','avatar-1599863501913.jpg','admin'),(3,'Carlos ','lotito','car@h.com','$2a$12$OU1Rg4lYPiM2MCGjTLWvEegTQwrrYjudMHq1k4n3mN9Zvn1qNsS8i',NULL,NULL,'avatar-1600381818230.jpg',NULL),(4,'juan','loquito','juani@o.com','$2a$12$7XLBDsFx.KY6KQH/2doLyOTZiv9xF7jjot/ajHICDWA/Lt6IAmvtG',NULL,NULL,'avatar-1600381954253.jpg','usuario'),(5,'pepe','pepele','pepe@hot.com','$2a$12$32tTmKpYhL.BkFWQXpncderzylNHEFHUByFHHZjHA6pFcYmXkYzuK',NULL,NULL,'avatar-1600467130068.jpg','usuario');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-09-14 15:15:22
+-- Dump completed on 2020-09-20 18:21:09

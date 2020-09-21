@@ -32,7 +32,7 @@ CREATE TABLE `products` (
   `image1` varchar(100) DEFAULT NULL,
   `image2` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +41,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (17,'Fogon del coco',12,5,'esto es una prueba.....','image-1600039023800.jpg','image1-1600039023803.jpg','image2-1600039023804.webp'),(18,'Fogon ecologico',321321,4,'- “Marge, creo que odio a Michael Jackson. ..','image-1600039747422.jpg','image1-1600039747423.jpg','image2-1600039747424.jpg'),(20,'locos',987988000,3,'- “Mi Homero no es comunista. .','image-1600040198582.jpg','empty','empty'),(21,'del coco',54654,1,' “Vas a morir Moe. ...','image-1600040307669.jpg','empty','empty'),(22,'este es lindo',78979900,1,'“Oh Marge, mi reina, Lisa mi pequeña princesa… Y cómo olvidarme del niño rata”.','image-1600040440460.jpg','empty','empty'),(23,'Fogon campeon',123132,1,' “Saben, hijos, un reactor nuclear es como una mujer. Sólo tienes que leer el manual y apretar los b','image-1600106679852.jpg','image1-1600106679853.jpg','image2-1600106679854.jpg');
+INSERT INTO `products` VALUES (21,'delCoco    ',1111,1,' “Vas a morir Moe. ... y vos tambien!!! Willyy!!!! ','image-1600613664724.jpg','empty','empty'),(27,'willy',321,5,'“Niños: hicieron su esfuerzo y fracasaron miserablemente. La lección es: nunca se esfuercen”.','image-1600299886023.jpg','image1-1600299886024.jpg','image2-1600299886024.jpg'),(29,'nuevo 1  ',68989,1,'“¡Que elegancia la de Francia!”.','image-1600613655438.jpg','empty','empty');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-09-14 15:15:22
+-- Dump completed on 2020-09-20 18:21:09

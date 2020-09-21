@@ -16,7 +16,11 @@
     
     
     }
-dl, ol, ul{
-    text-align: center;
+dl, ol, ul, li,a {
+    text-align: left;
         
+}
+.redess{
+    margin-top: 30px;
+    text-align: center;
 }
