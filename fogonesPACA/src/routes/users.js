@@ -20,6 +20,7 @@ router.get('/registro',loginController.registro);
 router.post('/registro',multerRegister.any(), registerValidation, loginController.registrado); //modularice register a la carpeta de registerValidation//
 router.get('/panelUsuario', admindMiddleware, loginController.panelUser );
 router.post('/panelUsuario/:id', admindMiddleware, loginController.panelUserEdit )
+router.get('/panelUsuario', admindMiddleware, loginController.panelUser );
 
 ////////////////////RUTA DE PRUEBA PARA FUNCIONAMIENTO DE SEQUELIZE///////////////////////////
 

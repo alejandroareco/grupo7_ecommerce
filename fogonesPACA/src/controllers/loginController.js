@@ -209,7 +209,6 @@ const loginController = {
         return res.redirect('../../productos/panelProducto')
     })
     },
-
 };
 
 
