@@ -23,7 +23,7 @@ router.get('/nosotros', productosController.nosotros);
 router.get('/contacto', productosController.contacto);
 router.get('/instructivo', productosController.instructivo);
 router.get('/listadoProductos',productosController.listadoProductos); /*Listado de todos los productos cargados*/
-router.get('/productoAgregado',productosController.productoAgregado);
+router.get('/productoAgregado',loggedUserMiddleware, productosController.productoAgregado);
 
 
 
