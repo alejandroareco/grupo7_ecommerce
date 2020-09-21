@@ -5,26 +5,15 @@ const {check, validationResult, body} = require('express-validator');//validator
 let db = require('../database/models');
 const { Console } = require('console');
 
-
 /*let usuarios = fs.readFileSync(path.join(__dirname, '../data/user.json'), 'utf8');
 usuarios = JSON.parse(usuarios); //VARIABLE PARA LEER LOS USUARIOS REGISTRADOS //
 */
 
 const loginController = {
-    //welcome:function(req, res){
-    //    res.render('welcome')//agregue para 
-    //},
-    //home:function(req, res){
-    //    res.render('home',{
-    //        user:req.session.user
-    //    });
-    //},
 
     login:function(req, res){
         res.render('login',{ user: req.session.user}) 
     },
-
-
 
     sesion: function(req, res) {  
         let errors = validationResult(req);
@@ -59,8 +48,7 @@ const loginController = {
                        
         }
     },
-    
-    
+        
      /////////////////////////////////////////////////////////////////////////////esto lee desde el JSON///////////
     
             /*for(let i = 0; i < usuarios.length; i++) {
@@ -123,8 +111,7 @@ const loginController = {
 
         //silencie el grabado del JSON me daba errores con la validacion /////////////////////////////////////////////
         /*
-  
-         
+           
         let usuario = {
         firstname: req.body.name,
         lastname: req.body.lastname,
@@ -147,12 +134,10 @@ const loginController = {
         //finalmente, envio al usuario a la vista de usuario registrado//
         res.render('registrado');*/
     },
-
     
     //edit: function(req, res){
        
     //},
-
 
     miCuentaEditado:function(req, res){ //necesito que ande session para esto//
         
@@ -174,11 +159,6 @@ const loginController = {
             return res.redirect('miCuenta')
         })
     },
-
-
-    
-
-
 
     miCuenta:function(req,res){
         db.User.findOne({
@@ -206,7 +186,6 @@ const loginController = {
         res.redirect('/login')
     },
 
-
     panelUser: function (req, res){
         db.User.findAll()
         .then(function(response){
@@ -220,18 +199,14 @@ const loginController = {
 
     panelUserEdit: function (req, res){
         db.User.update({
-        admin: req.body.admin                    
-    },
-    {
-        where: { email: req.body.email }
-        
+        admin: req.body.admin,                  
+        },
+        {
+        where: { id: req.params.id }
     })
-   
     .then(function() {
-        return res.redirect('panelUsuario', {
-            usuario:response,
-            user:req.session.user}
-        )
+        
+        return res.redirect('../../productos/panelProducto')
     })
     },
 

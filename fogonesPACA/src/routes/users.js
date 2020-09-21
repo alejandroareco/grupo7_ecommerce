@@ -19,7 +19,7 @@ router.get('/registro',loginController.registro);
 //aca se chequea el mail y el password que llega a travez del form de registro//
 router.post('/registro',multerRegister.any(), registerValidation, loginController.registrado); //modularice register a la carpeta de registerValidation//
 router.get('/panelUsuario', admindMiddleware, loginController.panelUser );
-router.post('/panelUsuario/', admindMiddleware, loginController.panelUserEdit )
+router.post('/panelUsuario/:id', admindMiddleware, loginController.panelUserEdit )
 
 ////////////////////RUTA DE PRUEBA PARA FUNCIONAMIENTO DE SEQUELIZE///////////////////////////
 
