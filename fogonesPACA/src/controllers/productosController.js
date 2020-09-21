@@ -10,6 +10,7 @@ const indexController = {
         res.render('carrito', {user:req.session.user})
     },
     productoAgregado:function(req,res){
+        res.render('productoAgregado',{user:req.session.user})
         /*Agregar producto al carrito*/        
     },
     detalleProducto:function(req, res){
