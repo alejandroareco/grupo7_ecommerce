@@ -34,15 +34,16 @@
                   <form action="/login/miCuenta"   method="POST">
                     <h5 class="card-title">Mis datos</h5>
                     <p class="card-text">Nombre</p>
-                    <input type="text" name="firstname" value="<%= user.firstname  %> ">
+                    <input id="user" type="text" name="firstname" value="<%= user.firstname  %> ">
+                    <small class="text-alert" id="errorNombrew"></small>
                     <p class="card-text">Apellido</p>
-                    <input type="text" name="lastname" value="<%= user.lastname  %> ">
+                    <input id="apellido" type="text" name="lastname" value="<%= user.lastname  %> ">
                     <p class="card-text">Mail</p>
-                    <input type="text" name="email" value="<%= user.email %> ">
+                    <input id="mail" type="text" name="email" value="<%= user.email %> ">
                     <p class="card-text">Dirección</p>
-                    <input type="text" name="address" value="<%= user.address %> ">
+                    <input id="direccion" type="text" name="address" value="<%= user.address %> ">
                     <p class="card-text">Telefono</p>
-                    <input type="text" name="phone" value="<%= user.phone %> ">
+                    <input id="telefono" type="text" name="phone" value="<%= user.phone %> ">
                     <input value="Editar" type="submit">
                   </form>
               </div>
@@ -75,6 +76,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="../js/edituser.js"></script>
 
 </body>
 </html>
