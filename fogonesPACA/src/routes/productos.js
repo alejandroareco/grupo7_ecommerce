@@ -17,12 +17,14 @@ router.post('/edit/:id', multerCargaProducto.any(), admindMiddleware, productosC
 router.post('/borrado/:id',multerCargaProducto.any(), admindMiddleware, productosController.borrado);// borrado de SQL
 
 router.get('/carrito',loggedUserMiddleware,productosController.carrito);
-router.post('/carrito',loggedUserMiddleware,productosController.productoAgregado);
+//router.post('/carrito',loggedUserMiddleware,productosController.productoAgregado);
 router.get('/detalleProducto/:id',productosController.detalleProducto);
 router.get('/nosotros', productosController.nosotros);
 router.get('/contacto', productosController.contacto);
 router.get('/instructivo', productosController.instructivo);
 router.get('/listadoProductos',productosController.listadoProductos); /*Listado de todos los productos cargados*/
+router.get('/productoAgregado',productosController.productoAgregado);
+
 
 
 module.exports = router;
