@@ -47,7 +47,6 @@ li{
     float: left;
     margin-right: 6%;
 }
-
 @media (min-width: 480px) { 
     header {
         background-color: white;
