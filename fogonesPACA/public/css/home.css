@@ -47,11 +47,6 @@ li{
     float: left;
     margin-right: 6%;
 }
-#tamanoProducto{
-    width: 350px;
-    height: 0px;
-}
-
 @media (min-width: 480px) { 
     header {
         background-color: white;

@@ -85,7 +85,7 @@
           <form action="/productos/ " method="GET">
             
             <% for (let i = 0; i < producto.length; i ++ ) { %>
-                <div id="tamanoProducto" class="card">
+                <div  class="card">
                   <a href="/productos/detalleProducto/<%=producto[i].id %>"><img  src="/img/fotosProductosNuevos/<%=producto[i].image %>" class="card-img-top"  alt="..."></a>
                     <div class="card-body">
                       <h5 class="card-title"><%=producto[i].name %></h5>
