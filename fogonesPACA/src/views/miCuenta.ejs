@@ -29,21 +29,32 @@
             <div class="col-sm-4">
               <div class="card">
                 <div class="card-body"> 
-                  <img id="avatar" src="/img/user/<%=user.avatar%> " alt="">
+                  <img id="avatar" src="/img/user/<%=user.avatar%>" alt="">
                   
                   <form action="/login/miCuenta"   method="POST">
                     <h5 class="card-title">Mis datos</h5>
+                    
                     <p class="card-text">Nombre</p>
-                    <input id="user" type="text" name="firstname" value="<%= user.firstname  %> ">
-                    <small class="text-alert" id="errorNombrew"></small>
+                    <input id="user" type="text" name="firstname" value="<%=user.firstname  %>"><br>
+                    <small class="text-alert" id="errorNombre"></small>
+
                     <p class="card-text">Apellido</p>
-                    <input id="apellido" type="text" name="lastname" value="<%= user.lastname  %> ">
+                    <input id="apellido" type="text" name="lastname" value="<%=user.lastname  %>"><br>
+                    <small class="text-alert" id="errorApellido"></small>
+
                     <p class="card-text">Mail</p>
-                    <input id="mail" type="text" name="email" value="<%= user.email %> ">
+                    <input id="mail" type="text" name="email" value="<%=user.email %>">
+                    <small class="text-alert" id="errorMail"></small>
+
                     <p class="card-text">Dirección</p>
-                    <input id="direccion" type="text" name="address" value="<%= user.address %> ">
+                    <input id="direccion" type="text" name="address" value="<%=user.address %>">
+                    <small class="text-alert" id="errorDireccion"></small>
+                    
+
                     <p class="card-text">Telefono</p>
-                    <input id="telefono" type="text" name="phone" value="<%= user.phone %> ">
+                    <input id="telefono" type="text" name="phone" value="<%=user.phone %>"> <br>
+                    <small class="text-alert" id="errorTelefono"></small>
+
                     <input value="Editar" type="submit">
                   </form>
               </div>
@@ -54,9 +65,9 @@
                 <div class="card-body">
                   <h5 class="card-title">MIS COMPRAS</h5>
                   <img id="producto" class="" src="/img/DSC_0243.JPG" alt="">
-                  <p id="nombreProducto">Nombre producto</p>
-                  <h4>$6.770</h4>
-                  <p> “La hiciste llorar, y luego yo lloré, y Maggie rió…Todo fue una confusión”, Homero </p>
+                  <p id="nombreProducto">Paca 20</p>
+                  <h4>$2080</h4>
+                  <p> Medidas: 20X10  -  Capacidad: 750cc  -  Rendimiento: 5hs </p>
                 </div>
               </div>
               <div id="botones" >
