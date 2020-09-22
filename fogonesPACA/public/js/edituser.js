@@ -44,11 +44,11 @@ window.addEventListener('load', function(){
             errorDireccion.innerText = ""
         }else errorDireccion.innerHTML = 'Recordá poner calle y número';
     })
-  
+    
     campoTelefono.addEventListener('blur', function(){
-        if(isNaN(campoTelefono.value)/* && (campoTelefono.value >= 8)*/){
-            errorTelefono.innerText = "Ingresa un número valido"
-        }else errorTelefono.innerHTML = '';
+        if(!isNaN(campoTelefono.value) && campoTelefono.value > 7){
+            errorTelefono.innerText = ""
+        }else errorTelefono.innerHTML = 'Ingresa un número valido';
         
     })
 
