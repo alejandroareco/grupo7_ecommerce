@@ -16,7 +16,7 @@ window.addEventListener('load', function(){
     let errorDireccion = getElementById('errorDireccion');
     let errorTelefono = getElementById('errorTelefono');
     let errores = {};
-    emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+    let emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
     let letras = /[A-Za-z0-9]+/g;
    
 
