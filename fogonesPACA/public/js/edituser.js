@@ -18,7 +18,7 @@ window.addEventListener('load', function(){
     let errores = {};
     emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
     let letras = /[A-Za-z0-9]+/g;
-    let numero = /^(\([0-9]{3}\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}/;
+   
 
   campoNombres.addEventListener("blur", () => {
           if (campoNombres.value.length < 2) {
@@ -44,10 +44,12 @@ window.addEventListener('load', function(){
             errorDireccion.innerText = ""
         }else errorDireccion.innerHTML = 'Recordá poner calle y número';
     })
+  
     campoTelefono.addEventListener('blur', function(){
-        if(isNaN(campoTelefono.value)){
+        if(isNaN(campoTelefono.value)/* && (campoTelefono.value >= 8)*/){
             errorTelefono.innerText = "Ingresa un número valido"
         }else errorTelefono.innerHTML = '';
+        
     })
 
 })
