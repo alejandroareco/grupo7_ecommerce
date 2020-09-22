@@ -12,6 +12,20 @@ function qs(elemento) {
 
     let regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
 
+    /* Validacion de cada error individual */
+    campoMail.addEventListener('input', function(){
+        if(!campoMail.value.match(regExEmail)){
+            errorMail.innerText = "Debe insertar un mail valido" 
+        } else errorMail.innerText = '';
+    })
+
+    campoPass.addEventListener('input', function(){
+        if(campoPass.value.length < 8){
+            errorPass.innerText = "La contraseña debe tener al menos 8 caracteres"
+        }else errorPass.innerText = " "
+    })
+
+    /*Validacion para evitar el envio del form con errores*/
     formulario.addEventListener('submit', function(event){
         event.preventDefault()
     let errores = {};
@@ -21,7 +35,7 @@ function qs(elemento) {
     } 
     console.log(errores)
     console.log(campoMail.value)
-    if(campoPass.value < 8){
+    if(campoPass.value.length < 8){
         errores.pass = "La contraseña debe tener al menos 8 caracteres"
     }
 
