@@ -77,6 +77,11 @@
                 <a href="../home">
                   <button type="button" class="btn btn-secondary">Seguir comprando!</button>
                 </a>
+                <% if (user.admin == "admin") {  %>
+                <a href="/productos/panelProducto">
+                  <button  type="button" class="btn btn-outline-primary">Administrador</button>
+                </a> 
+                <% } %>
               </div>
             </div>
           </div> 
