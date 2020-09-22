@@ -4,18 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/productoAgregado">
 
-  <title>error</title>
+  <title>Gracias</title>
 </head>
 <header>
-
+  <%-include('./Homeheader.ejs')%>
 </header>
-<div class="container text-center text-md-left mt-5">
+<div class="container text-center">
+    <br>
     <p>Su producto ha sido agregado al carrito con exito</p>
-  
-  
+    <p>En breve, recibirás un correo con el número de órden y factura.</p>
+    <p>Recordá siempre tener en cuenta las medidas de <a href="/productos/instructivo">seguridad</a></p>
+    <img src="/img/DSC_0052.JPG" class="rounded mx-auto d-block"  width="315" height="210" alt="welcome">
+    <br>
+    <p>No dudes en <a href="/productos/contacto">contactarte con nosotros</a> si tenes alguna consulta respecto a tu orden.</p>
+    <p>MUCHAS GRACIAS POR CONFIAR EN NOSOTROS!</p>
+    <a href="/home"><button type="button" class="btn btn-outline-primary">REGRESAR AL INICIO</button></a>
 </div>
 
   <footer>
-  
+    <%-include('./footer.ejs')%>
   </footer>
