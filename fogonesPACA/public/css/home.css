@@ -17,6 +17,10 @@ ul {
 li{
     color:black;
 }
+#somos{
+    text-align: center;
+    font-family: 'Tinos', serif;
+}
 
 .btn{
     padding: 0;

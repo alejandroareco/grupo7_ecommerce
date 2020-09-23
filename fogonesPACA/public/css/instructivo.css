@@ -1,14 +1,17 @@
-h2 {
+body h2 {
     text-align: center;
 }
 
-h4 {
+body h4 {
     text-align: center;
 }
 
-p {
+p#cuerpo {
     align-content: center;
     text-align: center;
+}
+#hojas{
+    width: 1110px;
 }
 .btn {
     background-color: DodgerBlue;
@@ -22,7 +25,16 @@ p {
   li {
       margin-left: 5px;
 }
-
+#paso1{
+    width: 100%;
+    height: 350px;
+    margin-bottom: 2%;
+}
 .card-body{
     font-family: 'Tinos', serif;
+}
+@media (max-width: 480px) {
+    #hojas{
+        width: 555px;
+    }
 }
