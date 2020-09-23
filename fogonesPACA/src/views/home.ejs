@@ -95,7 +95,7 @@
         <div class="card-columns">  
             <% for (let i = 0; i < producto.length; i ++ ) { %>
                 <div  class="card">
-                  <a href="/productos/detalleProducto/<%=producto[i].id %>"><img src="/img/fotosProductosNuevos/<%=producto[i].image %>"class="card-img-top"  alt="..."></a>
+                  <div id="hide"> <a href="/productos/detalleProducto/<%=producto[i].id %>"><div id="hide" ><img  id="zoom" src="/img/fotosProductosNuevos/<%=producto[i].image %>"class="card-img-top"  alt="..."></div></a></div>
                     <div class="card-body">
                       <h5 class="card-title"><%=producto[i].name %></h5>
                         <p class="card-text"><%=producto[i].description %></p>
