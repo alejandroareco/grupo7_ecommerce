@@ -13,7 +13,16 @@ img{
 ul {
     justify-content: center;
 }
-
+#zoom{
+    transition: transform 0.4s;
+}
+#zoom:hover{
+    transform: scale(1.1);
+    
+}
+#hide{
+    overflow: hidden;
+}
 li{
     color:black;
 }
