@@ -13,7 +13,9 @@ body{
     justify-content: center;
     text-align: center;
 }
-
+.text-alert{
+    color: red;
+}
 .form-group{
     background-color:none;
     text-align: center;
