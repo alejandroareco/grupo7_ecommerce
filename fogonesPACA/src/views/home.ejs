@@ -100,7 +100,7 @@
                       <h5 class="card-title"><%=producto[i].name %></h5>
                         <p class="card-text"><%=producto[i].description %></p>
                         <div class="card-footer">
-                          <small class="text-muted">$<%=" " + producto[i].price %></small>
+                          <large class="text-muted">$<%=" " + producto[i].price %></small>
                           </div>
                             <form id="form" action="/productos/detalleProducto/<%=producto[i].id %> method="GET">
                                 <input type="hidden" value="" name="id_producto">
