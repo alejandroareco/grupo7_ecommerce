@@ -90,7 +90,10 @@ li{
     width: auto;
 }
 .card-img-top{
-    height: auto;
     width: auto;
+    padding: 10px;
+}
+
+.card{
     padding: 10px;
 }
